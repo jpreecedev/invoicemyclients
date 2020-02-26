@@ -26,9 +26,6 @@
   - [ ] About us
   - [ ] Footer
 - [ ] Login/registration page.
-  - [ ] Log in tab
-  - [ ] Register tab
-  - [ ] Confirm create account (if clicking login when not already registered)
 - [ ] Dashboard
   - [ ] Line chart - Revenue vs. income over time
 - [ ] Clients
