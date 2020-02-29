@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<LandingPageHeading /> tests should match desktop snapshot 1`] = `
+<LandingPageHeading
+  mobile={true}
+/>
+`;
+
+exports[`<LandingPageHeading /> tests should match mobile snapshot 1`] = `
+<LandingPageHeading
+  mobile={false}
+/>
+`;
