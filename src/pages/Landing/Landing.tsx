@@ -1,13 +1,14 @@
 import React from 'react'
 import { Button, Container, Divider, Grid, Header, Image, List, Segment } from 'semantic-ui-react'
 
+import { LandingPageHeading } from '../../components/LandingPageHeading'
 import { DesktopNavBar } from '../../components/DesktopNavBar'
 import { MobileNavBar } from '../../components/MobileNavBar'
 
 const ResponsiveContainer: React.FC = ({ children }) => (
   <div>
-    <DesktopNavBar>{children}</DesktopNavBar>
-    <MobileNavBar>{children}</MobileNavBar>
+    <DesktopNavBar heading={<LandingPageHeading />}>{children}</DesktopNavBar>
+    <MobileNavBar heading={<LandingPageHeading mobile />}>{children}</MobileNavBar>
   </div>
 )
 

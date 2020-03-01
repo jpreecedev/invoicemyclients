@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SignUp /> tests should match snapshot 1`] = `
+<div>
+  <section
+    class="container drop-shadow section"
+    id="signup"
+  >
+    <h2
+      class="ui header"
+    >
+      Sign Up / Log In
+      <div
+        class="sub header"
+      >
+        To ensure maximum security and simplicity, we recommend signing up/logging in using a secure authentication provider
+      </div>
+    </h2>
+    <button
+      class="ui big fluid button space facebook"
+    >
+      <i
+        aria-hidden="true"
+        class="facebook icon"
+      />
+      Log In Using Facebook
+    </button>
+    <button
+      class="ui big fluid button space google plus"
+    >
+      <i
+        aria-hidden="true"
+        class="google icon"
+      />
+      Log In Using Google
+    </button>
+    <small>
+      If you do not already have an account, we will create one automatically for you.
+    </small>
+  </section>
+</div>
+`;

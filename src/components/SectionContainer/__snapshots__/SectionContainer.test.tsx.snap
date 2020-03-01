@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SectionContainer /> tests should match snapshot 1`] = `
+<div>
+  <section
+    class="container drop-shadow optional-classes"
+    id="test"
+  >
+    <h2
+      class="ui header"
+    >
+      Test Container
+      <div
+        class="sub header"
+      >
+        Test Sub Title
+      </div>
+    </h2>
+  </section>
+</div>
+`;

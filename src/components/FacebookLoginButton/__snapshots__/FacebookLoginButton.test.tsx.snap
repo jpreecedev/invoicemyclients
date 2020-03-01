@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<FacebookLoginButton /> tests should match snapshot 1`] = `
+<div>
+  <button
+    class="ui big fluid button space facebook"
+  >
+    <i
+      aria-hidden="true"
+      class="facebook icon"
+    />
+    Log In Using Facebook
+  </button>
+</div>
+`;

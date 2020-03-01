@@ -1,7 +1,9 @@
 import React from 'react'
 import { Button, Container, Icon, Menu, Responsive, Segment, Sidebar } from 'semantic-ui-react'
 
-import { LandingPageHeading } from '../LandingPageHeading'
+interface MobileNavBarProps {
+  heading: React.ReactElement
+}
 
 const getWidth = () => {
   return typeof window === 'undefined'
@@ -9,7 +11,7 @@ const getWidth = () => {
     : window.innerWidth
 }
 
-const MobileNavBar: React.FC = ({ children }) => {
+const MobileNavBar: React.FC<MobileNavBarProps> = ({ children, heading }) => {
   const [sidebarOpened, setSidebarOpened] = React.useState(false)
 
   return (
@@ -54,7 +56,7 @@ const MobileNavBar: React.FC = ({ children }) => {
               </Menu.Item>
             </Menu>
           </Container>
-          <LandingPageHeading mobile />
+          {heading}
         </Segment>
 
         {children}

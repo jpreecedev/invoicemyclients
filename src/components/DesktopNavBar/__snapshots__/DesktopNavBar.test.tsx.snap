@@ -1,9 +1,50 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<DesktopNavBar /> tests should match snapshot 1`] = `
-<DesktopNavBar>
+<div>
   <div>
-    Foo
+    <div>
+      <div
+        class="ui inverted vertical center aligned segment"
+        style="min-height: 700px; padding: 1em 0em; background-image: url(landing-hero.jpg);"
+      >
+        <div
+          class="ui large inverted pointing secondary menu"
+        >
+          <div
+            class="ui container"
+          >
+            <a
+              class="item"
+            >
+              Features
+            </a>
+            <a
+              class="item"
+            >
+              Pricing
+            </a>
+            <div
+              class="right item"
+            >
+              <a
+                class="ui primary button"
+                role="button"
+                style="margin-left: 0.5em;"
+              >
+                Sign Up
+              </a>
+            </div>
+          </div>
+        </div>
+        <h1>
+          Heading
+        </h1>
+      </div>
+    </div>
+    <div>
+      Foo
+    </div>
   </div>
-</DesktopNavBar>
+</div>
 `;

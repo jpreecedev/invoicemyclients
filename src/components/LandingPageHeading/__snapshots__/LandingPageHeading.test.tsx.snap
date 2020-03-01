@@ -1,13 +1,65 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<LandingPageHeading /> tests should match desktop snapshot 1`] = `
-<LandingPageHeading
-  mobile={true}
-/>
+<div>
+  <div
+    class="ui text container"
+  >
+    <h1
+      class="ui inverted header"
+      style="font-size: 2em; margin-bottom: 0px; margin-top: 1.5em;"
+    >
+      InvoiceMyClients.com
+    </h1>
+    <h2
+      class="ui inverted header"
+      style="font-size: 1.5em; margin-bottom: 2rem;"
+    >
+      We make it quick, easy, and secure for your clients to pay your invoices.
+    </h2>
+    <a
+      class="ui huge primary button"
+      href="/sign-up"
+      role="button"
+    >
+      It's free to get started
+      <i
+        aria-hidden="true"
+        class="arrow right icon"
+      />
+    </a>
+  </div>
+</div>
 `;
 
 exports[`<LandingPageHeading /> tests should match mobile snapshot 1`] = `
-<LandingPageHeading
-  mobile={false}
-/>
+<div>
+  <div
+    class="ui text container"
+  >
+    <h1
+      class="ui inverted header"
+      style="font-size: 4em; margin-bottom: 0px; margin-top: 3em;"
+    >
+      InvoiceMyClients.com
+    </h1>
+    <h2
+      class="ui inverted header"
+      style="font-size: 1.7em; margin-bottom: 2rem;"
+    >
+      We make it quick, easy, and secure for your clients to pay your invoices.
+    </h2>
+    <a
+      class="ui huge primary button"
+      href="/sign-up"
+      role="button"
+    >
+      It's free to get started
+      <i
+        aria-hidden="true"
+        class="arrow right icon"
+      />
+    </a>
+  </div>
+</div>
 `;

@@ -1,8 +1,11 @@
 import React from 'react'
 import { Button, Container, Menu, Responsive, Segment, Visibility } from 'semantic-ui-react'
 
-import { LandingPageHeading } from '../LandingPageHeading'
 import hero from '../../assets/images/landing-hero.jpg'
+
+interface DesktopNavBarProps {
+  heading: React.ReactElement
+}
 
 const getWidth = () => {
   return typeof window === 'undefined'
@@ -10,7 +13,7 @@ const getWidth = () => {
     : window.innerWidth
 }
 
-const DesktopNavBar: React.FC = ({ children }) => {
+const DesktopNavBar: React.FC<DesktopNavBarProps> = ({ children, heading }) => {
   const [fixed, setFixed] = React.useState(false)
 
   return (
@@ -43,7 +46,7 @@ const DesktopNavBar: React.FC = ({ children }) => {
               </Menu.Item>
             </Container>
           </Menu>
-          <LandingPageHeading />
+          {heading}
         </Segment>
       </Visibility>
 

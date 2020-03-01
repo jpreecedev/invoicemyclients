@@ -7,3 +7,4 @@
 
 @violet         : #6D48E5;
 @fontName       : 'Avenir';
+@fontSize       :  16px;

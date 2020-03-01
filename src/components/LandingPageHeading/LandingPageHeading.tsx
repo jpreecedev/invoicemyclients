@@ -1,7 +1,9 @@
 import React from 'react'
 import { Button, Container, Header, Icon } from 'semantic-ui-react'
+import { Link } from 'react-router-dom'
 
 import { siteConfig } from '../../site-config'
+import { ROUTES } from '../../routes'
 
 interface LandingPageHeadingProps {
   mobile?: boolean
@@ -28,7 +30,7 @@ const LandingPageHeading: React.FC<LandingPageHeadingProps> = ({ mobile = false 
         marginBottom: '2rem'
       }}
     />
-    <Button primary size="huge">
+    <Button primary size="huge" as={Link} to={ROUTES.SignUpPage}>
       It&apos;s free to get started
       <Icon name="arrow right" />
     </Button>
