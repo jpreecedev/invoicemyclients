@@ -1,6 +1,8 @@
 import React from 'react'
 import { Button, Container, Header, Icon } from 'semantic-ui-react'
 
+import { siteConfig } from '../../site-config'
+
 interface LandingPageHeadingProps {
   mobile?: boolean
 }
@@ -9,27 +11,25 @@ const LandingPageHeading: React.FC<LandingPageHeadingProps> = ({ mobile = false 
   <Container text>
     <Header
       as="h1"
-      content="Imagine-a-Company"
+      content={siteConfig.title}
       inverted
       style={{
         fontSize: mobile ? '2em' : '4em',
-        fontWeight: 'normal',
         marginBottom: 0,
         marginTop: mobile ? '1.5em' : '3em'
       }}
     />
     <Header
       as="h2"
-      content="Do whatever you want when you want to."
+      content={siteConfig.tagline}
       inverted
       style={{
         fontSize: mobile ? '1.5em' : '1.7em',
-        fontWeight: 'normal',
-        marginTop: mobile ? '0.5em' : '1.5em'
+        marginBottom: '2rem'
       }}
     />
     <Button primary size="huge">
-      Get Started
+      It&apos;s free to get started
       <Icon name="arrow right" />
     </Button>
   </Container>

@@ -1,5 +1,6 @@
 import React from 'react'
 import { Button, Container, Icon, Menu, Responsive, Segment, Sidebar } from 'semantic-ui-react'
+
 import { LandingPageHeading } from '../LandingPageHeading'
 
 const getWidth = () => {

@@ -1,0 +1,9 @@
+/*******************************
+     User Global Variables
+*******************************/
+
+@primaryColor   : @violet;
+@secondaryColor : @grey;
+
+@violet         : #6D48E5;
+@fontName       : 'Avenir';
