@@ -1,7 +1,14 @@
 const ROUTES = {
-  LandingPage: '/',
-  SignUpPage: '/sign-up',
-  InvoiceBuilderPage: '/invoice-builder'
+  home: '/',
+  signup: '/sign-up',
+  invoiceBuilder: '/invoice-builder',
+  nav: {
+    dashboard: '/dashboard',
+    clients: '/clients',
+    invoices: '/invoices',
+    nagging: '/nagging',
+    support: '/support'
+  }
 }
 
 export { ROUTES }

@@ -2,14 +2,8 @@
 
 exports[`<GoogleLoginButton /> tests should match snapshot 1`] = `
 <div>
-  <button
-    class="ui big fluid button space google plus"
-  >
-    <i
-      aria-hidden="true"
-      class="google icon"
-    />
-    Log In Using Google
-  </button>
+  <p>
+    Log in using Google
+  </p>
 </div>
 `;

@@ -6,13 +6,9 @@ exports[`<SectionContainer /> tests should match snapshot 1`] = `
     class="container drop-shadow optional-classes"
     id="test"
   >
-    <h2
-      class="ui header"
-    >
+    <h2>
       Test Container
-      <div
-        class="sub header"
-      >
+      <div>
         Test Sub Title
       </div>
     </h2>
