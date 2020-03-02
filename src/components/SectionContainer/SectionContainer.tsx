@@ -2,7 +2,6 @@ import React from 'react'
 import clsx from 'clsx'
 
 import styles from './styles.module.css'
-import { HeaderSubheader, Header } from 'semantic-ui-react'
 
 interface SectionContainerProps {
   id: string
@@ -20,10 +19,10 @@ const SectionContainer: React.FC<SectionContainerProps> = ({
 }) => {
   return (
     <section id={id} className={clsx(styles.container, 'drop-shadow', sectionClassNames)}>
-      <Header as="h2">
+      <h2>
         {title}
-        {subtitle && <HeaderSubheader>{subtitle}</HeaderSubheader>}
-      </Header>
+        {subtitle && <div>{subtitle}</div>}
+      </h2>
 
       {children}
     </section>
