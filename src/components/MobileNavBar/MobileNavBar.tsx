@@ -24,14 +24,8 @@ const MobileNavBar: React.FC<MobileNavBarProps> = ({ children, heading }) => {
         vertical
         visible={sidebarOpened}
       >
-        <Menu.Item as="a" active>
-          Home
-        </Menu.Item>
-        <Menu.Item as="a">Work</Menu.Item>
-        <Menu.Item as="a">Company</Menu.Item>
-        <Menu.Item as="a">Careers</Menu.Item>
-        <Menu.Item as="a">Log in</Menu.Item>
-        <Menu.Item as="a">Sign Up</Menu.Item>
+        <Menu.Item as="a">Features</Menu.Item>
+        <Menu.Item as="a">Pricing</Menu.Item>
       </Sidebar>
 
       <Sidebar.Pusher dimmed={sidebarOpened}>
@@ -47,10 +41,7 @@ const MobileNavBar: React.FC<MobileNavBarProps> = ({ children, heading }) => {
                 <Icon name="sidebar" />
               </Menu.Item>
               <Menu.Item position="right">
-                <Button as="a" inverted>
-                  Log in
-                </Button>
-                <Button as="a" inverted style={{ marginLeft: '0.5em' }}>
+                <Button as="a" primary style={{ marginLeft: '0.5em' }}>
                   Sign Up
                 </Button>
               </Menu.Item>
