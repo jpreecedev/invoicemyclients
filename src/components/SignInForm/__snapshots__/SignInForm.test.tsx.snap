@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<SignUp /> tests should match snapshot 1`] = `
+exports[`<SignInForm /> tests should match snapshot 1`] = `
 <div>
   <section>
     <div
