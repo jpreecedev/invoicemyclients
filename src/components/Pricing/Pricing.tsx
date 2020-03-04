@@ -5,7 +5,7 @@ import { ROUTES } from '../../routes'
 
 const Pricing = () => {
   return (
-    <section className="py-8 mt-10 mb-10">
+    <section className="py-8 mt-8 mt-md-10 mb-10">
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-12 col-md-5">

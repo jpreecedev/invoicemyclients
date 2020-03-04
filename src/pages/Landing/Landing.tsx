@@ -8,9 +8,9 @@ import { Pricing } from '../../components/Pricing'
 import { LandingPageCTA } from '../../components/LandingPageCTA'
 import { Footer } from '../../components/Footer'
 
-const LandingPage: React.FC = ({ children }) => (
+const LandingPage = () => (
   <>
-    <NavBar>{children}</NavBar>
+    <NavBar />
     <Hero />
     <LandingPageDashboardPreview />
     <Hub />

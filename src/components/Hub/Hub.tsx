@@ -44,7 +44,7 @@ const data = [
 
 const Hub = () => {
   return (
-    <section className="py-8 bg-gray-200 mt-5 pt-11 mt-11">
+    <section className="py-8 bg-gray-200 mt-5 pt-9 pt-md-11 mt-8 mt-md-11">
       <h2 className="text-center font-weight-bold mb-8">
         InvoiceMyClients.com, where speed and security matters.
       </h2>

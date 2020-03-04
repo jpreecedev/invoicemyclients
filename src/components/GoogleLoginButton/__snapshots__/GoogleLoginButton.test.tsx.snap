@@ -1,9 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`<GoogleLoginButton /> tests should match snapshot 1`] = `
-<div>
-  <p>
-    Log in using Google
-  </p>
-</div>
-`;

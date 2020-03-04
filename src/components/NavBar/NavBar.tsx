@@ -1,14 +1,16 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 import { siteConfig } from '../../site-config'
+import { ROUTES } from '../../routes'
 
 const NavBar: React.FC = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light">
       <div className="container">
-        <a className="navbar-brand" href="/">
+        <Link className="navbar-brand" to={ROUTES.home}>
           {siteConfig.title}
-        </a>
+        </Link>
 
         <button
           className="navbar-toggler"
@@ -37,35 +39,35 @@ const NavBar: React.FC = () => {
 
           <ul className="navbar-nav ml-auto">
             <li className="nav-item dropdown">
-              <a className="nav-link" href="#">
+              <Link className="nav-link" to={ROUTES.nav.dashboard}>
                 Dashboard
-              </a>
+              </Link>
             </li>
             <li className="nav-item dropdown">
-              <a className="nav-link" href="#">
+              <Link className="nav-link" to={ROUTES.nav.clients}>
                 Clients
-              </a>
+              </Link>
             </li>
             <li className="nav-item dropdown">
-              <a className="nav-link" href="#">
+              <Link className="nav-link" to={ROUTES.nav.invoices}>
                 Invoices
-              </a>
+              </Link>
             </li>
             <li className="nav-item dropdown">
-              <a className="nav-link" href="#">
+              <Link className="nav-link" to={ROUTES.nav.nagging}>
                 Nagging
-              </a>
+              </Link>
             </li>
             <li className="nav-item dropdown">
-              <a className="nav-link" href="#">
+              <Link className="nav-link" to={ROUTES.nav.support}>
                 Support
-              </a>
+              </Link>
             </li>
           </ul>
 
-          <a className="navbar-btn btn btn-sm btn-primary lift ml-auto" href="#">
+          <Link className="navbar-btn btn btn-sm btn-primary lift ml-auto" to={ROUTES.signup}>
             Sign Up
-          </a>
+          </Link>
         </div>
       </div>
     </nav>

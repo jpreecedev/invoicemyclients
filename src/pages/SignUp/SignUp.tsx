@@ -1,7 +1,5 @@
 import React from 'react'
 
-import { SignUpForm } from '../../components/SignUpForm'
-
-const SignUpPage = () => <SignUpForm />
+const SignUpPage = () => <p>Sign Up Form</p>
 
 export { SignUpPage }

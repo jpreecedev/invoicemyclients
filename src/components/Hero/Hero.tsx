@@ -6,7 +6,7 @@ import illustration4 from '../../assets/img/illustrations/illustration-4.png'
 
 const Hero = () => {
   return (
-    <section className="position-relative pt-12 pt-md-14 mt-n11">
+    <section className="position-relative pt-11 pt-md-14 mt-n11">
       <div className="shape shape-fluid-x shape-blur-2 svg-shim text-light">
         <svg viewBox="0 0 1313 768" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path
@@ -22,7 +22,7 @@ const Hero = () => {
             <img
               src={illustration4}
               alt="InvoiceMyClients.com"
-              className="img-fluid mw-130 float-right mb-6 mb-md-0"
+              className="img-fluid float-right float-md-none mb-6 mb-md-0"
             />
           </div>
           <div className="col-12 col-md-6">
