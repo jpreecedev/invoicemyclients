@@ -3,7 +3,7 @@
 exports[`<Pricing /> tests should match snapshot 1`] = `
 <div>
   <section
-    class="py-8 mt-10 mb-10"
+    class="py-8 mt-8 mt-md-10 mb-10"
   >
     <div
       class="container"

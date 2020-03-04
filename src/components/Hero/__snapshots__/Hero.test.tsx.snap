@@ -3,7 +3,7 @@
 exports[`<Hero /> tests should match snapshot 1`] = `
 <div>
   <section
-    class="position-relative pt-12 pt-md-14 mt-n11"
+    class="position-relative pt-11 pt-md-14 mt-n11"
   >
     <div
       class="shape shape-fluid-x shape-blur-2 svg-shim text-light"
@@ -30,7 +30,7 @@ exports[`<Hero /> tests should match snapshot 1`] = `
         >
           <img
             alt="InvoiceMyClients.com"
-            class="img-fluid mw-130 float-right mb-6 mb-md-0"
+            class="img-fluid float-right float-md-none mb-6 mb-md-0"
             src="illustration-4.png"
           />
         </div>

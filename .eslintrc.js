@@ -16,7 +16,8 @@ module.exports = {
     'prettier/prettier': ['error', { singleQuote: true }],
     '@typescript-eslint/explicit-member-accessibility': 0,
     '@typescript-eslint/explicit-function-return-type': 0,
-    'react/prop-types': 0
+    'react/prop-types': 0,
+    '@typescript-eslint/ban-ts-ignore': 0
   },
   settings: {
     react: {
@@ -24,5 +25,8 @@ module.exports = {
       version: 'detect'
     }
   },
-  parser: '@typescript-eslint/parser'
+  parser: '@typescript-eslint/parser',
+  globals: {
+    process: true
+  }
 }

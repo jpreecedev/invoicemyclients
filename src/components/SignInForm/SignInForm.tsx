@@ -1,9 +1,23 @@
 import React from 'react'
+import firebase from 'firebase/app'
+import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth'
+import { useAuthState } from 'react-firebase-hooks/auth'
+import { Redirect } from 'react-router-dom'
 
-import { FacebookLoginButton } from '../FacebookLoginButton'
-import { GoogleLoginButton } from '../GoogleLoginButton'
+import { ROUTES } from '../../routes'
+
+const uiConfig = {
+  signInFlow: '',
+  signInSuccessUrl: '/dashboard',
+  signInOptions: [
+    firebase.auth.FacebookAuthProvider.PROVIDER_ID,
+    firebase.auth.GoogleAuthProvider.PROVIDER_ID
+  ]
+}
 
 const SignInForm = () => {
+  const [user, initialising, error] = useAuthState(firebase.auth())
+
   return (
     <section>
       <div className="container d-flex flex-column">
@@ -17,8 +31,16 @@ const SignInForm = () => {
             </p>
 
             <div className="mb-8">
-              <FacebookLoginButton additionalClasses="mb-3" />
-              <GoogleLoginButton />
+              {!user && !initialising && (
+                <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={firebase.auth()} />
+              )}
+              {user && !initialising && (
+                <>
+                  <Redirect to={ROUTES.nav.dashboard} />
+                  <p className="text-center">One sec whilst we redirect you...</p>
+                </>
+              )}
+              {error && <div className="alert alert-danger">Sorry something went wrong</div>}
             </div>
 
             <small className="d-block text-center text-muted">

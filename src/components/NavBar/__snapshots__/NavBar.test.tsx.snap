@@ -52,7 +52,7 @@ exports[`<NavBar /> tests should match snapshot 1`] = `
           >
             <a
               class="nav-link"
-              href="#"
+              href="/dashboard"
             >
               Dashboard
             </a>
@@ -62,7 +62,7 @@ exports[`<NavBar /> tests should match snapshot 1`] = `
           >
             <a
               class="nav-link"
-              href="#"
+              href="/clients"
             >
               Clients
             </a>
@@ -72,7 +72,7 @@ exports[`<NavBar /> tests should match snapshot 1`] = `
           >
             <a
               class="nav-link"
-              href="#"
+              href="/invoices"
             >
               Invoices
             </a>
@@ -82,7 +82,7 @@ exports[`<NavBar /> tests should match snapshot 1`] = `
           >
             <a
               class="nav-link"
-              href="#"
+              href="/nagging"
             >
               Nagging
             </a>
@@ -92,7 +92,7 @@ exports[`<NavBar /> tests should match snapshot 1`] = `
           >
             <a
               class="nav-link"
-              href="#"
+              href="/support"
             >
               Support
             </a>
@@ -100,7 +100,7 @@ exports[`<NavBar /> tests should match snapshot 1`] = `
         </ul>
         <a
           class="navbar-btn btn btn-sm btn-primary lift ml-auto"
-          href="#"
+          href="/sign-up"
         >
           Sign Up
         </a>

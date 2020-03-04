@@ -52,7 +52,7 @@ exports[`<Landing /> tests should match snapshot 1`] = `
           >
             <a
               class="nav-link"
-              href="#"
+              href="/dashboard"
             >
               Dashboard
             </a>
@@ -62,7 +62,7 @@ exports[`<Landing /> tests should match snapshot 1`] = `
           >
             <a
               class="nav-link"
-              href="#"
+              href="/clients"
             >
               Clients
             </a>
@@ -72,7 +72,7 @@ exports[`<Landing /> tests should match snapshot 1`] = `
           >
             <a
               class="nav-link"
-              href="#"
+              href="/invoices"
             >
               Invoices
             </a>
@@ -82,7 +82,7 @@ exports[`<Landing /> tests should match snapshot 1`] = `
           >
             <a
               class="nav-link"
-              href="#"
+              href="/nagging"
             >
               Nagging
             </a>
@@ -92,7 +92,7 @@ exports[`<Landing /> tests should match snapshot 1`] = `
           >
             <a
               class="nav-link"
-              href="#"
+              href="/support"
             >
               Support
             </a>
@@ -100,7 +100,7 @@ exports[`<Landing /> tests should match snapshot 1`] = `
         </ul>
         <a
           class="navbar-btn btn btn-sm btn-primary lift ml-auto"
-          href="#"
+          href="/sign-up"
         >
           Sign Up
         </a>
@@ -108,7 +108,7 @@ exports[`<Landing /> tests should match snapshot 1`] = `
     </div>
   </nav>
   <section
-    class="position-relative pt-12 pt-md-14 mt-n11"
+    class="position-relative pt-11 pt-md-14 mt-n11"
   >
     <div
       class="shape shape-fluid-x shape-blur-2 svg-shim text-light"
@@ -135,7 +135,7 @@ exports[`<Landing /> tests should match snapshot 1`] = `
         >
           <img
             alt="InvoiceMyClients.com"
-            class="img-fluid mw-130 float-right mb-6 mb-md-0"
+            class="img-fluid float-right float-md-none mb-6 mb-md-0"
             src="illustration-4.png"
           />
         </div>
@@ -256,7 +256,7 @@ exports[`<Landing /> tests should match snapshot 1`] = `
     </div>
   </section>
   <section
-    class="py-8 bg-gray-200 mt-5 pt-11 mt-11"
+    class="py-8 bg-gray-200 mt-5 pt-9 pt-md-11 mt-8 mt-md-11"
   >
     <h2
       class="text-center font-weight-bold mb-8"
@@ -516,7 +516,7 @@ exports[`<Landing /> tests should match snapshot 1`] = `
     </div>
   </section>
   <section
-    class="py-8 mt-10 mb-10"
+    class="py-8 mt-8 mt-md-10 mb-10"
   >
     <div
       class="container"
@@ -758,7 +758,9 @@ exports[`<Landing /> tests should match snapshot 1`] = `
           </p>
           <a
             class="text-gray-700"
-            href="#"
+            href="https://jpreecedev.com"
+            rel="noopener noreferrer"
+            target="_blank"
           >
             © Jon Preece Development Ltd.
           </a>

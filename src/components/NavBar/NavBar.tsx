@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 
 import { siteConfig } from '../../site-config'
 import { ROUTES } from '../../routes'
+import { SignUpButton } from '../SignUpButton'
 
 const NavBar: React.FC = () => {
   return (
@@ -65,9 +66,7 @@ const NavBar: React.FC = () => {
             </li>
           </ul>
 
-          <Link className="navbar-btn btn btn-sm btn-primary lift ml-auto" to={ROUTES.signup}>
-            Sign Up
-          </Link>
+          <SignUpButton />
         </div>
       </div>
     </nav>

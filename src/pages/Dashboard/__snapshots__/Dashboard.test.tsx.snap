@@ -108,7 +108,7 @@ exports[`<Dashboard /> tests should match snapshot 1`] = `
     </div>
   </nav>
   <main
-    class="container mt-10"
+    class="container mt-5"
   >
     <div
       class="row"
@@ -117,7 +117,8 @@ exports[`<Dashboard /> tests should match snapshot 1`] = `
         class="col-12"
       >
         <h1>
-          Welcome, User!
+          Welcome, 
+          !
         </h1>
       </div>
     </div>
