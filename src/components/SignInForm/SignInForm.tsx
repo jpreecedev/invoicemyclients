@@ -18,6 +18,10 @@ const uiConfig = {
 const SignInForm = () => {
   const [user, initialising, error] = useAuthState(firebase.auth())
 
+  if (initialising) {
+    return null
+  }
+
   return (
     <section>
       <div className="container d-flex flex-column">
@@ -31,10 +35,8 @@ const SignInForm = () => {
             </p>
 
             <div className="mb-8">
-              {!user && !initialising && (
-                <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={firebase.auth()} />
-              )}
-              {user && !initialising && (
+              {!user && <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={firebase.auth()} />}
+              {user && (
                 <>
                   <Redirect to={ROUTES.nav.dashboard} />
                   <p className="text-center">One sec whilst we redirect you...</p>

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Dashboard /> tests should match snapshot 1`] = `
+exports[`<Invoices /> tests should match snapshot 1`] = `
 <div>
   <nav
     class="navbar navbar-expand-lg navbar-light"
@@ -116,13 +116,11 @@ exports[`<Dashboard /> tests should match snapshot 1`] = `
       <div
         class="col-12"
       >
-        <h1>
-          Dashboard
-        </h1>
-        <p>
-          Welcome, 
-          !
-        </p>
+        <a
+          href="/invoice-builder"
+        >
+          Invoice Builder
+        </a>
       </div>
     </div>
   </main>

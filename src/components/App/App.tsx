@@ -10,6 +10,8 @@ import { LandingPage } from '../../pages/Landing'
 import { SignUpPage } from '../../pages/SignUp'
 import { ErrorPage } from '../../pages/Error'
 import { DashboardPage } from '../../pages/Dashboard'
+import { InvoicesPage } from '../../pages/Invoices'
+import { InvoiceBuilderPage } from '../../pages/InvoiceBuilder'
 
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_API_KEY,
@@ -28,7 +30,11 @@ firebase.analytics()
 firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL)
 
 const AuthenticatedRoute: React.FC<RouteProps> = props => {
-  const [user] = useAuthState(firebase.auth())
+  const [user, initialising] = useAuthState(firebase.auth())
+  if (initialising) {
+    return null
+  }
+
   if (user) {
     return <Route {...props} />
   }
@@ -47,6 +53,12 @@ const App: React.FC = () => {
         </Route>
         <AuthenticatedRoute path={ROUTES.nav.dashboard}>
           <DashboardPage />
+        </AuthenticatedRoute>
+        <AuthenticatedRoute path={ROUTES.nav.invoices}>
+          <InvoicesPage />
+        </AuthenticatedRoute>
+        <AuthenticatedRoute path={ROUTES.invoiceBuilder}>
+          <InvoiceBuilderPage />
         </AuthenticatedRoute>
         <Route path="*">
           <ErrorPage />
