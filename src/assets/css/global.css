@@ -1,3 +1,16 @@
 body {
   -webkit-font-smoothing: antialiased;
 }
+
+.form-control {
+  border-color: #ced4da;
+}
+
+form label {
+  margin-bottom: 0;
+  font-size: 0.875rem;
+}
+
+.table .thead-light th {
+  background-color: #e9ecef;
+}

@@ -12,7 +12,7 @@ const AuthenticatedPage: React.FC = ({ children }) => {
     <>
       {!initialising && !user && <Redirect to={ROUTES.nav.dashboard} />}
       <NavBar />
-      <main className="container mt-5">
+      <main className="container mt-5 mb-10 pb-10">
         <div className="row">
           <div className="col-12">{children}</div>
         </div>
