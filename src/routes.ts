@@ -1,13 +1,18 @@
 const ROUTES = {
   home: '/',
   signup: '/sign-up',
-  invoiceBuilder: '/invoice-builder',
-  nav: {
-    dashboard: '/dashboard',
-    clients: '/clients',
-    invoices: '/invoices',
-    nagging: '/nagging',
-    support: '/support'
+  dashboard: '/dashboard',
+  support: '/support',
+  invoicing: {
+    base: '/invoices',
+    add: '/invoices/add'
+  },
+  clients: {
+    base: '/clients',
+    add: '/clients/add'
+  },
+  nagging: {
+    base: '/nagging'
   }
 }
 

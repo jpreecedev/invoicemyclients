@@ -40,27 +40,27 @@ const NavBar: React.FC = () => {
 
           <ul className="navbar-nav ml-auto">
             <li className="nav-item dropdown">
-              <Link className="nav-link" to={ROUTES.nav.dashboard}>
+              <Link className="nav-link" to={ROUTES.dashboard}>
                 Dashboard
               </Link>
             </li>
             <li className="nav-item dropdown">
-              <Link className="nav-link" to={ROUTES.nav.clients}>
+              <Link className="nav-link" to={ROUTES.clients.base}>
                 Clients
               </Link>
             </li>
             <li className="nav-item dropdown">
-              <Link className="nav-link" to={ROUTES.nav.invoices}>
+              <Link className="nav-link" to={ROUTES.invoicing.base}>
                 Invoices
               </Link>
             </li>
             <li className="nav-item dropdown">
-              <Link className="nav-link" to={ROUTES.nav.nagging}>
+              <Link className="nav-link" to={ROUTES.nagging.base}>
                 Nagging
               </Link>
             </li>
             <li className="nav-item dropdown">
-              <Link className="nav-link" to={ROUTES.nav.support}>
+              <Link className="nav-link" to={ROUTES.support}>
                 Support
               </Link>
             </li>

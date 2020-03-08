@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<InvoiceBuilder /> tests should match snapshot 1`] = `
+exports[`<InvoicesAdd /> tests should match snapshot 1`] = `
 <div>
   <nav
     class="navbar navbar-expand-lg navbar-light"
@@ -108,17 +108,21 @@ exports[`<InvoiceBuilder /> tests should match snapshot 1`] = `
     </div>
   </nav>
   <main
-    class="container mt-5 mb-10 pb-10"
+    class="mt-5 mb-10 pb-10"
   >
-    <div
-      class="row"
+    <h1
+      class="container"
     >
       <div
-        class="col-12"
+        class="row"
       >
         <h1>
-          Create a new invoice
+          Create A New Invoice
         </h1>
+      </div>
+      <div
+        class="row"
+      >
         <p>
           You are raising a new invoice for 
           <strong>
@@ -126,7 +130,7 @@ exports[`<InvoiceBuilder /> tests should match snapshot 1`] = `
           </strong>
           .
         </p>
-        <div
+        <section
           class="container shadow-sm mb-5 rounded-lg"
         >
           <form>
@@ -427,9 +431,9 @@ exports[`<InvoiceBuilder /> tests should match snapshot 1`] = `
               </div>
             </div>
           </form>
-        </div>
+        </section>
       </div>
-    </div>
+    </h1>
   </main>
 </div>
 `;

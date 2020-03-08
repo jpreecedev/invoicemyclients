@@ -6,16 +6,23 @@ import { useAuthState } from 'react-firebase-hooks/auth'
 import { NavBar } from '../../components/NavBar'
 import { ROUTES } from '../../routes'
 
-const AuthenticatedPage: React.FC = ({ children }) => {
+interface AuthenticatedPageProps {
+  title: string
+}
+
+const AuthenticatedPage: React.FC<AuthenticatedPageProps> = ({ children, title }) => {
   const [user, initialising] = useAuthState(firebase.auth())
   return (
     <>
-      {!initialising && !user && <Redirect to={ROUTES.nav.dashboard} />}
+      {!initialising && !user && <Redirect to={ROUTES.dashboard} />}
       <NavBar />
-      <main className="container mt-5 mb-10 pb-10">
-        <div className="row">
-          <div className="col-12">{children}</div>
-        </div>
+      <main className="mt-5 mb-10 pb-10">
+        <h1 className="container">
+          <div className="row">
+            <h1>{title}</h1>
+          </div>
+          <div className="row">{children}</div>
+        </h1>
       </main>
     </>
   )

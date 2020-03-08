@@ -3,8 +3,16 @@ import clsx from 'clsx'
 
 import styles from './styles.module.css'
 
-const Container: React.FC = ({ children }) => {
-  return <div className={clsx(styles.container, 'shadow-sm mb-5 rounded-lg')}>{children}</div>
+interface ContainerProps {
+  additionalClasses?: string | string[]
+}
+
+const Container: React.FC<ContainerProps> = ({ children, additionalClasses = '' }) => {
+  return (
+    <section className={clsx(styles.container, 'shadow-sm mb-5 rounded-lg', additionalClasses)}>
+      {children}
+    </section>
+  )
 }
 
 export { Container }

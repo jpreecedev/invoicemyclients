@@ -14,3 +14,9 @@ form label {
 .table .thead-light th {
   background-color: #e9ecef;
 }
+
+.form-group.narrow .form-control {
+  height: 42px;
+  padding: 8px 16px;
+  font-size: 0.8765rem;
+}

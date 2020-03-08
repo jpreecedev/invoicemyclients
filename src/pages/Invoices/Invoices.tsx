@@ -5,8 +5,8 @@ import { AuthenticatedPage } from '../../components/AuthenticatedPage'
 
 const InvoicesPage = () => {
   return (
-    <AuthenticatedPage>
-      <a href={ROUTES.invoiceBuilder}>Invoice Builder</a>
+    <AuthenticatedPage title="Invoices">
+      <a href={ROUTES.invoicing.add}>Invoice Builder</a>
     </AuthenticatedPage>
   )
 }

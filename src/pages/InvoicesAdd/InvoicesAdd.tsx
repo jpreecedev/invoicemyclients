@@ -4,10 +4,9 @@ import { AuthenticatedPage } from '../../components/AuthenticatedPage'
 import { Container } from '../../components/Container'
 import { Invoice } from '../../components/Invoice'
 
-const InvoiceBuilderPage = () => {
+const InvoicesAddPage = () => {
   return (
-    <AuthenticatedPage>
-      <h1>Create a new invoice</h1>
+    <AuthenticatedPage title="Create A New Invoice">
       <p>
         You are raising a new invoice for <strong>Jon Preece Development Ltd</strong>.
       </p>
@@ -18,4 +17,4 @@ const InvoiceBuilderPage = () => {
   )
 }
 
-export { InvoiceBuilderPage }
+export { InvoicesAddPage }

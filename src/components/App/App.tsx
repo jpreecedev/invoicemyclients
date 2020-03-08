@@ -11,7 +11,9 @@ import { SignUpPage } from '../../pages/SignUp'
 import { ErrorPage } from '../../pages/Error'
 import { DashboardPage } from '../../pages/Dashboard'
 import { InvoicesPage } from '../../pages/Invoices'
-import { InvoiceBuilderPage } from '../../pages/InvoiceBuilder'
+import { InvoicesAddPage } from '../../pages/InvoicesAdd'
+import { ClientsPage } from '../../pages/Clients'
+import { ClientsAddPage } from '../../pages/ClientsAdd'
 
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_API_KEY,
@@ -48,17 +50,23 @@ const App: React.FC = () => {
         <Route exact path={ROUTES.home}>
           <LandingPage />
         </Route>
-        <Route path={ROUTES.signup}>
+        <Route exact path={ROUTES.signup}>
           <SignUpPage />
         </Route>
-        <AuthenticatedRoute path={ROUTES.nav.dashboard}>
+        <AuthenticatedRoute exact path={ROUTES.dashboard}>
           <DashboardPage />
         </AuthenticatedRoute>
-        <AuthenticatedRoute path={ROUTES.nav.invoices}>
+        <AuthenticatedRoute exact path={ROUTES.invoicing.base}>
           <InvoicesPage />
         </AuthenticatedRoute>
-        <AuthenticatedRoute path={ROUTES.invoiceBuilder}>
-          <InvoiceBuilderPage />
+        <AuthenticatedRoute exact path={ROUTES.invoicing.add}>
+          <InvoicesAddPage />
+        </AuthenticatedRoute>
+        <AuthenticatedRoute exact path={ROUTES.clients.base}>
+          <ClientsPage />
+        </AuthenticatedRoute>
+        <AuthenticatedRoute exact path={ROUTES.clients.add}>
+          <ClientsAddPage />
         </AuthenticatedRoute>
         <Route path="*">
           <ErrorPage />

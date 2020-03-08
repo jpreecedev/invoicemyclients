@@ -108,21 +108,28 @@ exports[`<Invoices /> tests should match snapshot 1`] = `
     </div>
   </nav>
   <main
-    class="container mt-5 mb-10 pb-10"
+    class="mt-5 mb-10 pb-10"
   >
-    <div
-      class="row"
+    <h1
+      class="container"
     >
       <div
-        class="col-12"
+        class="row"
+      >
+        <h1>
+          Invoices
+        </h1>
+      </div>
+      <div
+        class="row"
       >
         <a
-          href="/invoice-builder"
+          href="/invoices/add"
         >
           Invoice Builder
         </a>
       </div>
-    </div>
+    </h1>
   </main>
 </div>
 `;

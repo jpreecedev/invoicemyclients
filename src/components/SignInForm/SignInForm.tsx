@@ -38,7 +38,7 @@ const SignInForm = () => {
               {!user && <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={firebase.auth()} />}
               {user && (
                 <>
-                  <Redirect to={ROUTES.nav.dashboard} />
+                  <Redirect to={ROUTES.dashboard} />
                   <p className="text-center">One sec whilst we redirect you...</p>
                 </>
               )}
