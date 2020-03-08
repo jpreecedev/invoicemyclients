@@ -12,9 +12,7 @@ const InvoiceBuilderPage = () => {
         You are raising a new invoice for <strong>Jon Preece Development Ltd</strong>.
       </p>
       <Container>
-        <form>
-          <Invoice />
-        </form>
+        <Invoice onAction={console.log} />
       </Container>
     </AuthenticatedPage>
   )
