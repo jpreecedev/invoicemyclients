@@ -110,25 +110,33 @@ exports[`<Dashboard /> tests should match snapshot 1`] = `
   <main
     class="mt-5 mb-10 pb-10"
   >
-    <h1
+    <div
       class="container"
     >
       <div
         class="row"
       >
-        <h1>
-          Dashboard
-        </h1>
+        <div
+          class="col-12"
+        >
+          <h1>
+            Dashboard
+          </h1>
+        </div>
       </div>
       <div
         class="row"
       >
-        <p>
-          Welcome, 
-          !
-        </p>
+        <div
+          class="col-12"
+        >
+          <p>
+            Welcome, 
+            !
+          </p>
+        </div>
       </div>
-    </h1>
+    </div>
   </main>
 </div>
 `;

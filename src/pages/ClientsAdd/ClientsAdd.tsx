@@ -1,20 +1,29 @@
 import React from 'react'
 
 import { AuthenticatedPage } from '../../components/AuthenticatedPage'
-import { Container } from '../../components/Container'
 import { ClientDetails } from '../../components/ClientDetails'
+import { Contacts } from '../../components/Contacts'
+import { AdditionalInfo } from '../../components/AdditionalInfo'
+import { AddressDetails } from '../../components/AddressDetails'
+import { Card } from '../../components/Card'
 
 const ClientsAddPage = () => {
   return (
     <AuthenticatedPage title="Add New Client">
-      <Container additionalClasses="col-12 col-md-6">
-        <h2>Details</h2>
+      <Card title="Client Details">
         <ClientDetails />
-      </Container>
-      <Container additionalClasses="col-12 col-md-6">
-        <h2>Details</h2>
-        <ClientDetails />
-      </Container>
+      </Card>
+      <Card title="Contact">
+        <Contacts />
+      </Card>
+      <Card title="Address Details">
+        <AddressDetails />
+      </Card>
+      <Card title="Additional Info">
+        <AdditionalInfo />
+      </Card>
+      <button className="btn btn-primary mr-1">Add Client</button>
+      <button className="btn btn-default">Reset</button>
     </AuthenticatedPage>
   )
 }

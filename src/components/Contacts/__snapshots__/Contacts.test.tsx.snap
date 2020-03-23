@@ -1,0 +1,80 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Contacts /> tests should match snapshot 1`] = `
+<div>
+  <form>
+    <div
+      class="form-group narrow d-flex"
+    >
+      <label
+        class="w-25 d-flex align-items-center"
+        for="firstName"
+      >
+        <small>
+          First Name
+        </small>
+      </label>
+      <input
+        class="form-control"
+        id="firstName"
+        placeholder="First Name"
+        type="text"
+      />
+    </div>
+    <div
+      class="form-group narrow d-flex"
+    >
+      <label
+        class="w-25 d-flex align-items-center"
+        for="lastName"
+      >
+        <small>
+          Last Name
+        </small>
+      </label>
+      <input
+        class="form-control"
+        id="lastName"
+        placeholder="Last Name"
+        type="text"
+      />
+    </div>
+    <div
+      class="form-group narrow d-flex"
+    >
+      <label
+        class="w-25 d-flex align-items-center"
+        for="email"
+      >
+        <small>
+          Email
+        </small>
+      </label>
+      <input
+        class="form-control"
+        id="email"
+        placeholder="Email"
+        type="text"
+      />
+    </div>
+    <div
+      class="form-group narrow d-flex"
+    >
+      <label
+        class="w-25 d-flex align-items-center"
+        for="phoneNumber"
+      >
+        <small>
+          Phone Number
+        </small>
+      </label>
+      <input
+        class="form-control"
+        id="phoneNumber"
+        placeholder="Phone Number"
+        type="text"
+      />
+    </div>
+  </form>
+</div>
+`;

@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { AuthenticatedPage } from '../../components/AuthenticatedPage'
-import { Container } from '../../components/Container'
+import { Card } from '../../components/Card'
 import { Invoice } from '../../components/Invoice'
 
 const InvoicesAddPage = () => {
@@ -10,9 +10,9 @@ const InvoicesAddPage = () => {
       <p>
         You are raising a new invoice for <strong>Jon Preece Development Ltd</strong>.
       </p>
-      <Container>
+      <Card>
         <Invoice onAction={console.log} />
-      </Container>
+      </Card>
     </AuthenticatedPage>
   )
 }

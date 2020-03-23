@@ -17,12 +17,16 @@ const AuthenticatedPage: React.FC<AuthenticatedPageProps> = ({ children, title }
       {!initialising && !user && <Redirect to={ROUTES.dashboard} />}
       <NavBar />
       <main className="mt-5 mb-10 pb-10">
-        <h1 className="container">
+        <div className="container">
           <div className="row">
-            <h1>{title}</h1>
+            <div className="col-12">
+              <h1>{title}</h1>
+            </div>
           </div>
-          <div className="row">{children}</div>
-        </h1>
+          <div className="row">
+            <div className="col-12">{children}</div>
+          </div>
+        </div>
       </main>
     </>
   )

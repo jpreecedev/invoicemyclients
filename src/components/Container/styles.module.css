@@ -1,11 +1,11 @@
 .container {
-  padding: 1rem 0.5rem;
+  padding: 0.5rem;
   background-color: #fdfdfd;
   border: 1px solid #f8f9fa;
 }
 
 @media screen and (min-width: 768px) {
   .container {
-    padding: 2rem 1rem;
+    padding: 1rem;
   }
 }

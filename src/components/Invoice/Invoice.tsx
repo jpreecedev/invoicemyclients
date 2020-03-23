@@ -203,7 +203,7 @@ const Invoice: React.FC<InvoiceProps> = ({ onAction }) => {
         </div>
         <div className="row">
           <div className="col-12 col-md-4 col-auto ml-auto p-0">
-            <div className="row border-bottom mt-5 pb-3">
+            <div className="row mt-5 pb-3">
               <div className="col-6 font-weight-bold">Subtotal</div>
               <div className="col-6 text-right">
                 {formData && formData.lineItems && (
@@ -213,7 +213,7 @@ const Invoice: React.FC<InvoiceProps> = ({ onAction }) => {
                 )}
               </div>
             </div>
-            <div className="row border-bottom pb-3 pt-3">
+            <div className="row pb-3 pt-3">
               <div className="col-6 font-weight-bold">Tax</div>
               <div className="col-6 text-right">
                 {formData && formData.lineItems && (

@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Container /> tests should match snapshot 1`] = `
+<div>
+  <section
+    class="container shadow-sm mb-5 rounded-lg"
+  />
+</div>
+`;

@@ -110,330 +110,343 @@ exports[`<InvoicesAdd /> tests should match snapshot 1`] = `
   <main
     class="mt-5 mb-10 pb-10"
   >
-    <h1
+    <div
       class="container"
     >
       <div
         class="row"
       >
-        <h1>
-          Create A New Invoice
-        </h1>
+        <div
+          class="col-12"
+        >
+          <h1>
+            Create A New Invoice
+          </h1>
+        </div>
       </div>
       <div
         class="row"
       >
-        <p>
-          You are raising a new invoice for 
-          <strong>
-            Jon Preece Development Ltd
-          </strong>
-          .
-        </p>
-        <section
-          class="container shadow-sm mb-5 rounded-lg"
+        <div
+          class="col-12"
         >
-          <form>
+          <p>
+            You are raising a new invoice for 
+            <strong>
+              Jon Preece Development Ltd
+            </strong>
+            .
+          </p>
+          <div
+            class="card shadow-light-lg card-border border-success mb-5"
+          >
             <div
-              class="container"
+              class="card-body"
             >
-              <div
-                class="row"
-              >
+              
+              <form>
                 <div
-                  class="col-12 col-md-4 form-group"
-                >
-                  <label
-                    for="invoiceDate"
-                  >
-                    Invoice Date
-                  </label>
-                  <input
-                    autocomplete="off"
-                    class="form-control"
-                    data-testid="invoiceDate"
-                    id="invoiceDate"
-                    name="invoiceDate"
-                    placeholder="Invoice Date"
-                    type="date"
-                  />
-                </div>
-                <div
-                  class="col-12 col-md-4 form-group"
-                >
-                  <label
-                    for="invoiceNumber"
-                  >
-                    Invoice Number #
-                  </label>
-                  <input
-                    autocomplete="off"
-                    class="form-control"
-                    data-testid="invoiceNumber"
-                    id="invoiceNumber"
-                    name="invoiceNumber"
-                    placeholder="Invoice Number #"
-                    type="text"
-                  />
-                </div>
-                <div
-                  class="col-12 col-md-4 form-group"
-                >
-                  <label
-                    for="dueDate"
-                  >
-                    Due Date
-                  </label>
-                  <input
-                    autocomplete="off"
-                    class="form-control"
-                    data-testid="dueDate"
-                    id="dueDate"
-                    name="dueDate"
-                    placeholder="Due Date"
-                    type="date"
-                  />
-                </div>
-              </div>
-              <div
-                class="row"
-              >
-                <div
-                  class="col-12 col-md-4 form-group col-auto ml-auto"
-                >
-                  <label
-                    for="poNumber"
-                  >
-                    PO Number #
-                  </label>
-                  <input
-                    autocomplete="off"
-                    class="form-control"
-                    data-testid="poNumber"
-                    id="poNumber"
-                    name="poNumber"
-                    placeholder="PO Number #"
-                    type="text"
-                  />
-                </div>
-              </div>
-              <div
-                class="row"
-              >
-                <table
-                  class="table table-sm table-borderless table-responsive mt-5"
-                >
-                  <thead
-                    class="thead-light mb-2"
-                  >
-                    <tr>
-                      <th
-                        scope="col"
-                      >
-                        <span
-                          class="text-uppercase p-2 text-black-50 text-nowrap"
-                        >
-                          Item
-                        </span>
-                      </th>
-                      <th
-                        scope="col"
-                      >
-                        <span
-                          class="text-uppercase p-2 text-black-50 text-nowrap"
-                        >
-                          Description
-                        </span>
-                      </th>
-                      <th
-                        scope="col"
-                      >
-                        <span
-                          class="text-uppercase p-2 text-black-50 text-nowrap"
-                        >
-                          Unit Cost
-                        </span>
-                      </th>
-                      <th
-                        scope="col"
-                      >
-                        <span
-                          class="text-uppercase p-2 text-black-50 text-nowrap"
-                        >
-                          Quantity
-                        </span>
-                      </th>
-                      <th
-                        scope="col"
-                      >
-                        <span
-                          class="text-uppercase p-2 text-black-50 text-nowrap"
-                        >
-                          Line Total
-                        </span>
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <th
-                        scope="row"
-                      >
-                        <input
-                          class="form-control"
-                          data-testid="lineItems[0].item"
-                          name="lineItems[0].item"
-                          placeholder="Item"
-                          type="text"
-                        />
-                      </th>
-                      <td>
-                        <input
-                          class="form-control"
-                          data-testid="lineItems[0].description"
-                          name="lineItems[0].description"
-                          placeholder="Description"
-                          type="text"
-                        />
-                      </td>
-                      <td>
-                        <input
-                          class="form-control"
-                          data-testid="lineItems[0].unitCost"
-                          name="lineItems[0].unitCost"
-                          placeholder="Unit Cost"
-                          type="number"
-                        />
-                      </td>
-                      <td>
-                        <input
-                          class="form-control"
-                          data-testid="lineItems[0].quantity"
-                          name="lineItems[0].quantity"
-                          placeholder="Quantity"
-                          type="number"
-                        />
-                      </td>
-                      <td
-                        class="text-right"
-                      >
-                        <p
-                          class="mb-0 mt-4"
-                          data-testid="lineTotal"
-                        >
-                          £0.00
-                        </p>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-              <div
-                class="row"
-              >
-                <div
-                  class="col-12 col-md-4 col-auto ml-auto p-0"
+                  class="container"
                 >
                   <div
-                    class="row border-bottom mt-5 pb-3"
+                    class="row"
                   >
                     <div
-                      class="col-6 font-weight-bold"
+                      class="col-12 col-md-4 form-group"
                     >
-                      Subtotal
+                      <label
+                        for="invoiceDate"
+                      >
+                        Invoice Date
+                      </label>
+                      <input
+                        autocomplete="off"
+                        class="form-control"
+                        data-testid="invoiceDate"
+                        id="invoiceDate"
+                        name="invoiceDate"
+                        placeholder="Invoice Date"
+                        type="date"
+                      />
                     </div>
                     <div
-                      class="col-6 text-right"
+                      class="col-12 col-md-4 form-group"
                     >
-                      <span
-                        data-testid="subTotal"
+                      <label
+                        for="invoiceNumber"
                       >
-                        £
-                        0.00
-                      </span>
+                        Invoice Number #
+                      </label>
+                      <input
+                        autocomplete="off"
+                        class="form-control"
+                        data-testid="invoiceNumber"
+                        id="invoiceNumber"
+                        name="invoiceNumber"
+                        placeholder="Invoice Number #"
+                        type="text"
+                      />
+                    </div>
+                    <div
+                      class="col-12 col-md-4 form-group"
+                    >
+                      <label
+                        for="dueDate"
+                      >
+                        Due Date
+                      </label>
+                      <input
+                        autocomplete="off"
+                        class="form-control"
+                        data-testid="dueDate"
+                        id="dueDate"
+                        name="dueDate"
+                        placeholder="Due Date"
+                        type="date"
+                      />
                     </div>
                   </div>
                   <div
-                    class="row border-bottom pb-3 pt-3"
+                    class="row"
                   >
                     <div
-                      class="col-6 font-weight-bold"
+                      class="col-12 col-md-4 form-group col-auto ml-auto"
                     >
-                      Tax
-                    </div>
-                    <div
-                      class="col-6 text-right"
-                    >
-                      <span
-                        data-testid="tax"
+                      <label
+                        for="poNumber"
                       >
-                        £
-                        0.00
-                      </span>
+                        PO Number #
+                      </label>
+                      <input
+                        autocomplete="off"
+                        class="form-control"
+                        data-testid="poNumber"
+                        id="poNumber"
+                        name="poNumber"
+                        placeholder="PO Number #"
+                        type="text"
+                      />
                     </div>
                   </div>
                   <div
-                    class="row pb-3 pt-3"
+                    class="row"
                   >
-                    <div
-                      class="col-6 font-weight-bold"
+                    <table
+                      class="table table-sm table-borderless table-responsive mt-5"
                     >
-                      Balance Due
-                    </div>
-                    <div
-                      class="col-6 text-right"
-                    >
-                      <span
-                        data-testid="balanceDue"
+                      <thead
+                        class="thead-light mb-2"
                       >
-                        £
-                        0.00
-                      </span>
+                        <tr>
+                          <th
+                            scope="col"
+                          >
+                            <span
+                              class="text-uppercase p-2 text-black-50 text-nowrap"
+                            >
+                              Item
+                            </span>
+                          </th>
+                          <th
+                            scope="col"
+                          >
+                            <span
+                              class="text-uppercase p-2 text-black-50 text-nowrap"
+                            >
+                              Description
+                            </span>
+                          </th>
+                          <th
+                            scope="col"
+                          >
+                            <span
+                              class="text-uppercase p-2 text-black-50 text-nowrap"
+                            >
+                              Unit Cost
+                            </span>
+                          </th>
+                          <th
+                            scope="col"
+                          >
+                            <span
+                              class="text-uppercase p-2 text-black-50 text-nowrap"
+                            >
+                              Quantity
+                            </span>
+                          </th>
+                          <th
+                            scope="col"
+                          >
+                            <span
+                              class="text-uppercase p-2 text-black-50 text-nowrap"
+                            >
+                              Line Total
+                            </span>
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th
+                            scope="row"
+                          >
+                            <input
+                              class="form-control"
+                              data-testid="lineItems[0].item"
+                              name="lineItems[0].item"
+                              placeholder="Item"
+                              type="text"
+                            />
+                          </th>
+                          <td>
+                            <input
+                              class="form-control"
+                              data-testid="lineItems[0].description"
+                              name="lineItems[0].description"
+                              placeholder="Description"
+                              type="text"
+                            />
+                          </td>
+                          <td>
+                            <input
+                              class="form-control"
+                              data-testid="lineItems[0].unitCost"
+                              name="lineItems[0].unitCost"
+                              placeholder="Unit Cost"
+                              type="number"
+                            />
+                          </td>
+                          <td>
+                            <input
+                              class="form-control"
+                              data-testid="lineItems[0].quantity"
+                              name="lineItems[0].quantity"
+                              placeholder="Quantity"
+                              type="number"
+                            />
+                          </td>
+                          <td
+                            class="text-right"
+                          >
+                            <p
+                              class="mb-0 mt-4"
+                              data-testid="lineTotal"
+                            >
+                              £0.00
+                            </p>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div
+                    class="row"
+                  >
+                    <div
+                      class="col-12 col-md-4 col-auto ml-auto p-0"
+                    >
+                      <div
+                        class="row mt-5 pb-3"
+                      >
+                        <div
+                          class="col-6 font-weight-bold"
+                        >
+                          Subtotal
+                        </div>
+                        <div
+                          class="col-6 text-right"
+                        >
+                          <span
+                            data-testid="subTotal"
+                          >
+                            £
+                            0.00
+                          </span>
+                        </div>
+                      </div>
+                      <div
+                        class="row pb-3 pt-3"
+                      >
+                        <div
+                          class="col-6 font-weight-bold"
+                        >
+                          Tax
+                        </div>
+                        <div
+                          class="col-6 text-right"
+                        >
+                          <span
+                            data-testid="tax"
+                          >
+                            £
+                            0.00
+                          </span>
+                        </div>
+                      </div>
+                      <div
+                        class="row pb-3 pt-3"
+                      >
+                        <div
+                          class="col-6 font-weight-bold"
+                        >
+                          Balance Due
+                        </div>
+                        <div
+                          class="col-6 text-right"
+                        >
+                          <span
+                            data-testid="balanceDue"
+                          >
+                            £
+                            0.00
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="row mt-5"
+                  >
+                    <div
+                      class="col-12"
+                    >
+                      <div
+                        class="d-flex justify-content-center"
+                      >
+                        <button
+                          class="btn btn-primary mr-3"
+                          type="button"
+                        >
+                          Save
+                        </button>
+                        <button
+                          class="btn btn-primary-soft mr-3"
+                          type="button"
+                        >
+                          Save As Draft
+                        </button>
+                        <button
+                          class="btn btn-primary-soft mr-3"
+                          type="button"
+                        >
+                          Nag Client To Pay
+                        </button>
+                        <button
+                          class="btn btn-primary-soft"
+                          type="button"
+                        >
+                          Download PDF
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div
-                class="row mt-5"
-              >
-                <div
-                  class="col-12"
-                >
-                  <div
-                    class="d-flex justify-content-center"
-                  >
-                    <button
-                      class="btn btn-primary mr-3"
-                      type="button"
-                    >
-                      Save
-                    </button>
-                    <button
-                      class="btn btn-primary-soft mr-3"
-                      type="button"
-                    >
-                      Save As Draft
-                    </button>
-                    <button
-                      class="btn btn-primary-soft mr-3"
-                      type="button"
-                    >
-                      Nag Client To Pay
-                    </button>
-                    <button
-                      class="btn btn-primary-soft"
-                      type="button"
-                    >
-                      Download PDF
-                    </button>
-                  </div>
-                </div>
-              </div>
+              </form>
             </div>
-          </form>
-        </section>
+          </div>
+        </div>
       </div>
-    </h1>
+    </div>
   </main>
 </div>
 `;

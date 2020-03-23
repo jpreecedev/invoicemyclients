@@ -110,219 +110,606 @@ exports[`<ClientsAdd /> tests should match snapshot 1`] = `
   <main
     class="mt-5 mb-10 pb-10"
   >
-    <h1
+    <div
       class="container"
     >
       <div
         class="row"
       >
-        <h1>
-          Add New Client
-        </h1>
+        <div
+          class="col-12"
+        >
+          <h1>
+            Add New Client
+          </h1>
+        </div>
       </div>
       <div
         class="row"
       >
-        <section
-          class="container shadow-sm mb-5 rounded-lg col-12 col-md-6"
+        <div
+          class="col-12"
         >
-          <h2>
-            Details
-          </h2>
-          <form>
+          <div
+            class="card shadow-light-lg card-border border-success mb-5"
+          >
             <div
-              class="form-group narrow d-flex"
+              class="card-body"
             >
-              <label
-                class="w-25 d-flex align-items-center"
-                for="companyName"
+              <h2
+                class="card-title text-body"
               >
-                <small>
-                  Company Name
-                </small>
-              </label>
-              <input
-                class="form-control"
-                id="companyName"
-                placeholder="Company Name"
-                type="text"
-              />
+                Client Details
+              </h2>
+              <form>
+                <div
+                  class="form-group narrow d-flex"
+                >
+                  <label
+                    class="w-25 d-flex align-items-center"
+                    for="companyName"
+                  >
+                    <small>
+                      Company Name
+                    </small>
+                  </label>
+                  <input
+                    class="form-control"
+                    id="companyName"
+                    placeholder="Company Name"
+                    type="text"
+                  />
+                </div>
+                <div
+                  class="form-group narrow d-flex"
+                >
+                  <label
+                    class="w-25 d-flex align-items-center"
+                    for="idNumber"
+                  >
+                    <small>
+                      ID Number
+                    </small>
+                  </label>
+                  <input
+                    class="form-control"
+                    id="idNumber"
+                    placeholder="ID Number"
+                    type="text"
+                  />
+                </div>
+                <div
+                  class="form-group narrow d-flex"
+                >
+                  <label
+                    class="w-25 d-flex align-items-center"
+                    for="website"
+                  >
+                    <small>
+                      Website
+                    </small>
+                  </label>
+                  <input
+                    class="form-control"
+                    id="website"
+                    placeholder="Website"
+                    type="text"
+                  />
+                </div>
+                <div
+                  class="form-group narrow d-flex"
+                >
+                  <label
+                    class="w-25 d-flex align-items-center"
+                    for="vatNumber"
+                  >
+                    <small>
+                      VAT Number
+                    </small>
+                  </label>
+                  <input
+                    class="form-control"
+                    id="vatNumber"
+                    placeholder="VAT Number"
+                    type="text"
+                  />
+                </div>
+                <div
+                  class="form-group narrow d-flex"
+                >
+                  <label
+                    class="w-25 d-flex align-items-center"
+                    for="phoneNumber"
+                  >
+                    <small>
+                      Phone Number
+                    </small>
+                  </label>
+                  <input
+                    class="form-control"
+                    id="phoneNumber"
+                    placeholder="Phone Number"
+                    type="text"
+                  />
+                </div>
+              </form>
             </div>
+          </div>
+          <div
+            class="card shadow-light-lg card-border border-success mb-5"
+          >
             <div
-              class="form-group narrow d-flex"
+              class="card-body"
             >
-              <label
-                class="w-25 d-flex align-items-center"
-                for="idNumber"
+              <h2
+                class="card-title text-body"
               >
-                <small>
-                  ID Number
-                </small>
-              </label>
-              <input
-                class="form-control"
-                id="idNumber"
-                placeholder="ID Number"
-                type="text"
-              />
+                Contact
+              </h2>
+              <form>
+                <div
+                  class="form-group narrow d-flex"
+                >
+                  <label
+                    class="w-25 d-flex align-items-center"
+                    for="firstName"
+                  >
+                    <small>
+                      First Name
+                    </small>
+                  </label>
+                  <input
+                    class="form-control"
+                    id="firstName"
+                    placeholder="First Name"
+                    type="text"
+                  />
+                </div>
+                <div
+                  class="form-group narrow d-flex"
+                >
+                  <label
+                    class="w-25 d-flex align-items-center"
+                    for="lastName"
+                  >
+                    <small>
+                      Last Name
+                    </small>
+                  </label>
+                  <input
+                    class="form-control"
+                    id="lastName"
+                    placeholder="Last Name"
+                    type="text"
+                  />
+                </div>
+                <div
+                  class="form-group narrow d-flex"
+                >
+                  <label
+                    class="w-25 d-flex align-items-center"
+                    for="email"
+                  >
+                    <small>
+                      Email
+                    </small>
+                  </label>
+                  <input
+                    class="form-control"
+                    id="email"
+                    placeholder="Email"
+                    type="text"
+                  />
+                </div>
+                <div
+                  class="form-group narrow d-flex"
+                >
+                  <label
+                    class="w-25 d-flex align-items-center"
+                    for="phoneNumber"
+                  >
+                    <small>
+                      Phone Number
+                    </small>
+                  </label>
+                  <input
+                    class="form-control"
+                    id="phoneNumber"
+                    placeholder="Phone Number"
+                    type="text"
+                  />
+                </div>
+              </form>
             </div>
+          </div>
+          <div
+            class="card shadow-light-lg card-border border-success mb-5"
+          >
             <div
-              class="form-group narrow d-flex"
+              class="card-body"
             >
-              <label
-                class="w-25 d-flex align-items-center"
-                for="website"
+              <h2
+                class="card-title text-body"
               >
-                <small>
-                  Website
-                </small>
-              </label>
-              <input
-                class="form-control"
-                id="website"
-                placeholder="Website"
-                type="text"
-              />
+                Address Details
+              </h2>
+              <ul
+                class="nav nav-pills mb-3"
+                id="addresses"
+                role="tablist"
+              >
+                <li
+                  class="nav-item"
+                >
+                  <a
+                    aria-controls="billingaddress"
+                    aria-selected="true"
+                    class="nav-link active"
+                    data-toggle="tab"
+                    href="#billingaddress"
+                    id="billingaddress-tab"
+                    role="tab"
+                  >
+                    Billing Address
+                  </a>
+                </li>
+                <li
+                  class="nav-item"
+                >
+                  <a
+                    aria-controls="shippingaddress"
+                    aria-selected="false"
+                    class="nav-link"
+                    data-toggle="tab"
+                    href="#shippingaddress"
+                    id="shippingaddress-tab"
+                    role="tab"
+                  >
+                    Shipping Address
+                  </a>
+                </li>
+              </ul>
+              <div
+                class="tab-content"
+                id="addressesContent"
+              >
+                <div
+                  aria-labelledby="shippingaddress-tab"
+                  class="tab-pane fade show active"
+                  id="shippingaddress"
+                  role="tabpanel"
+                >
+                  <form>
+                    <div
+                      class="form-group narrow d-flex"
+                    >
+                      <label
+                        class="w-25 d-flex align-items-center"
+                        for="street"
+                      >
+                        <small>
+                          Street
+                        </small>
+                      </label>
+                      <input
+                        class="form-control"
+                        id="street"
+                        placeholder="Street"
+                        type="text"
+                      />
+                    </div>
+                    <div
+                      class="form-group narrow d-flex"
+                    >
+                      <label
+                        class="w-25 d-flex align-items-center"
+                        for="addressLine1"
+                      >
+                        <small>
+                          Address Line 1
+                        </small>
+                      </label>
+                      <input
+                        class="form-control"
+                        id="addressLine1"
+                        placeholder="Address Line 1"
+                        type="text"
+                      />
+                    </div>
+                    <div
+                      class="form-group narrow d-flex"
+                    >
+                      <label
+                        class="w-25 d-flex align-items-center"
+                        for="addressLine2"
+                      >
+                        <small>
+                          Address Line 2
+                        </small>
+                      </label>
+                      <input
+                        class="form-control"
+                        id="addressLine2"
+                        placeholder="Address Line 2"
+                        type="text"
+                      />
+                    </div>
+                    <div
+                      class="form-group narrow d-flex"
+                    >
+                      <label
+                        class="w-25 d-flex align-items-center"
+                        for="city"
+                      >
+                        <small>
+                          City
+                        </small>
+                      </label>
+                      <input
+                        class="form-control"
+                        id="city"
+                        placeholder="City"
+                        type="text"
+                      />
+                    </div>
+                    <div
+                      class="form-group narrow d-flex"
+                    >
+                      <label
+                        class="w-25 d-flex align-items-center"
+                        for="state"
+                      >
+                        <small>
+                          State / Province
+                        </small>
+                      </label>
+                      <input
+                        class="form-control"
+                        id="state"
+                        placeholder="State / Province"
+                        type="text"
+                      />
+                    </div>
+                    <div
+                      class="form-group narrow d-flex"
+                    >
+                      <label
+                        class="w-25 d-flex align-items-center"
+                        for="postalCode"
+                      >
+                        <small>
+                          Postal Code
+                        </small>
+                      </label>
+                      <input
+                        class="form-control"
+                        id="postalCode"
+                        placeholder="Postal Code"
+                        type="text"
+                      />
+                    </div>
+                    <div
+                      class="form-group narrow d-flex"
+                    >
+                      <label
+                        class="w-25 d-flex align-items-center"
+                        for="country"
+                      >
+                        <small>
+                          Country
+                        </small>
+                      </label>
+                      <input
+                        class="form-control"
+                        id="country"
+                        placeholder="Country"
+                        type="text"
+                      />
+                    </div>
+                  </form>
+                </div>
+                <div
+                  aria-labelledby="billingaddress-tab"
+                  class="tab-pane fade"
+                  id="billingaddress"
+                  role="tabpanel"
+                >
+                  <form>
+                    <div
+                      class="form-group narrow d-flex"
+                    >
+                      <label
+                        class="w-25 d-flex align-items-center"
+                        for="street"
+                      >
+                        <small>
+                          Street
+                        </small>
+                      </label>
+                      <input
+                        class="form-control"
+                        id="street"
+                        placeholder="Street"
+                        type="text"
+                      />
+                    </div>
+                    <div
+                      class="form-group narrow d-flex"
+                    >
+                      <label
+                        class="w-25 d-flex align-items-center"
+                        for="addressLine1"
+                      >
+                        <small>
+                          Address Line 1
+                        </small>
+                      </label>
+                      <input
+                        class="form-control"
+                        id="addressLine1"
+                        placeholder="Address Line 1"
+                        type="text"
+                      />
+                    </div>
+                    <div
+                      class="form-group narrow d-flex"
+                    >
+                      <label
+                        class="w-25 d-flex align-items-center"
+                        for="addressLine2"
+                      >
+                        <small>
+                          Address Line 2
+                        </small>
+                      </label>
+                      <input
+                        class="form-control"
+                        id="addressLine2"
+                        placeholder="Address Line 2"
+                        type="text"
+                      />
+                    </div>
+                    <div
+                      class="form-group narrow d-flex"
+                    >
+                      <label
+                        class="w-25 d-flex align-items-center"
+                        for="city"
+                      >
+                        <small>
+                          City
+                        </small>
+                      </label>
+                      <input
+                        class="form-control"
+                        id="city"
+                        placeholder="City"
+                        type="text"
+                      />
+                    </div>
+                    <div
+                      class="form-group narrow d-flex"
+                    >
+                      <label
+                        class="w-25 d-flex align-items-center"
+                        for="state"
+                      >
+                        <small>
+                          State / Province
+                        </small>
+                      </label>
+                      <input
+                        class="form-control"
+                        id="state"
+                        placeholder="State / Province"
+                        type="text"
+                      />
+                    </div>
+                    <div
+                      class="form-group narrow d-flex"
+                    >
+                      <label
+                        class="w-25 d-flex align-items-center"
+                        for="postalCode"
+                      >
+                        <small>
+                          Postal Code
+                        </small>
+                      </label>
+                      <input
+                        class="form-control"
+                        id="postalCode"
+                        placeholder="Postal Code"
+                        type="text"
+                      />
+                    </div>
+                    <div
+                      class="form-group narrow d-flex"
+                    >
+                      <label
+                        class="w-25 d-flex align-items-center"
+                        for="country"
+                      >
+                        <small>
+                          Country
+                        </small>
+                      </label>
+                      <input
+                        class="form-control"
+                        id="country"
+                        placeholder="Country"
+                        type="text"
+                      />
+                    </div>
+                  </form>
+                </div>
+              </div>
             </div>
+          </div>
+          <div
+            class="card shadow-light-lg card-border border-success mb-5"
+          >
             <div
-              class="form-group narrow d-flex"
+              class="card-body"
             >
-              <label
-                class="w-25 d-flex align-items-center"
-                for="vatNumber"
+              <h2
+                class="card-title text-body"
               >
-                <small>
-                  VAT Number
-                </small>
-              </label>
-              <input
-                class="form-control"
-                id="vatNumber"
-                placeholder="VAT Number"
-                type="text"
-              />
+                Additional Info
+              </h2>
+              <form>
+                <div
+                  class="form-group narrow d-flex"
+                >
+                  <label
+                    class="w-25 d-flex align-items-center"
+                    for="currency"
+                  >
+                    <small>
+                      Currency
+                    </small>
+                  </label>
+                  <input
+                    class="form-control"
+                    id="currency"
+                    placeholder="Currency"
+                    type="text"
+                  />
+                </div>
+                <div
+                  class="form-group narrow d-flex"
+                >
+                  <label
+                    class="w-25 d-flex align-items-center"
+                    for="paymentTerms"
+                  >
+                    <small>
+                      Payment Terms
+                    </small>
+                  </label>
+                  <input
+                    class="form-control"
+                    id="paymentTerms"
+                    placeholder="Payment Terms"
+                    type="text"
+                  />
+                </div>
+              </form>
             </div>
-            <div
-              class="form-group narrow d-flex"
-            >
-              <label
-                class="w-25 d-flex align-items-center"
-                for="phoneNumber"
-              >
-                <small>
-                  Phone Number
-                </small>
-              </label>
-              <input
-                class="form-control"
-                id="phoneNumber"
-                placeholder="Phone Number"
-                type="text"
-              />
-            </div>
-          </form>
-        </section>
-        <section
-          class="container shadow-sm mb-5 rounded-lg col-12 col-md-6"
-        >
-          <h2>
-            Details
-          </h2>
-          <form>
-            <div
-              class="form-group narrow d-flex"
-            >
-              <label
-                class="w-25 d-flex align-items-center"
-                for="companyName"
-              >
-                <small>
-                  Company Name
-                </small>
-              </label>
-              <input
-                class="form-control"
-                id="companyName"
-                placeholder="Company Name"
-                type="text"
-              />
-            </div>
-            <div
-              class="form-group narrow d-flex"
-            >
-              <label
-                class="w-25 d-flex align-items-center"
-                for="idNumber"
-              >
-                <small>
-                  ID Number
-                </small>
-              </label>
-              <input
-                class="form-control"
-                id="idNumber"
-                placeholder="ID Number"
-                type="text"
-              />
-            </div>
-            <div
-              class="form-group narrow d-flex"
-            >
-              <label
-                class="w-25 d-flex align-items-center"
-                for="website"
-              >
-                <small>
-                  Website
-                </small>
-              </label>
-              <input
-                class="form-control"
-                id="website"
-                placeholder="Website"
-                type="text"
-              />
-            </div>
-            <div
-              class="form-group narrow d-flex"
-            >
-              <label
-                class="w-25 d-flex align-items-center"
-                for="vatNumber"
-              >
-                <small>
-                  VAT Number
-                </small>
-              </label>
-              <input
-                class="form-control"
-                id="vatNumber"
-                placeholder="VAT Number"
-                type="text"
-              />
-            </div>
-            <div
-              class="form-group narrow d-flex"
-            >
-              <label
-                class="w-25 d-flex align-items-center"
-                for="phoneNumber"
-              >
-                <small>
-                  Phone Number
-                </small>
-              </label>
-              <input
-                class="form-control"
-                id="phoneNumber"
-                placeholder="Phone Number"
-                type="text"
-              />
-            </div>
-          </form>
-        </section>
+          </div>
+          <button
+            class="btn btn-primary mr-1"
+          >
+            Add Client
+          </button>
+          <button
+            class="btn btn-default"
+          >
+            Reset
+          </button>
+        </div>
       </div>
-    </h1>
+    </div>
   </main>
 </div>
 `;
