@@ -13,6 +13,7 @@ import {
   AdditionalInfoDefaultState,
   AddressDefaultState
 } from '../../global'
+import clsx from 'clsx'
 
 interface ClientAddFormData {
   clientDetails: ClientDetailsDefaultState
@@ -32,7 +33,7 @@ const defaultFormData: ClientAddFormData = {
 
 const ClientsAddPage = () => {
   const [formData, setFormData] = React.useState<ClientAddFormData>(defaultFormData)
-  const { register, handleSubmit } = useForm<ClientAddFormData>()
+  const { register, errors, handleSubmit } = useForm<ClientAddFormData>()
 
   const handleChange = (data: ClientAddFormData) => {
     setFormData(data)
@@ -43,16 +44,16 @@ const ClientsAddPage = () => {
     <AuthenticatedPage title="Add New Client">
       <form onSubmit={handleSubmit(handleChange)}>
         <Card title="Client Details">
-          <ClientDetails register={register} />
+          <ClientDetails register={register} errors={errors} />
         </Card>
         <Card title="Contact">
-          <Contacts register={register} />
+          <Contacts register={register} errors={errors} />
         </Card>
         <Card title="Address Details">
-          <AddressDetails register={register} />
+          <AddressDetails register={register} errors={errors} />
         </Card>
         <Card title="Additional Info">
-          <AdditionalInfo register={register} />
+          <AdditionalInfo register={register} errors={errors} />
         </Card>
         <button className="btn btn-primary mr-1" type="submit">
           Add Client

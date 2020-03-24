@@ -1,95 +1,44 @@
 import React from 'react'
 
 import { AddressDetailsDefaultState, FormRegistration } from '../../global'
+import { FormLabelGroup } from '../FormLabelGroup'
 
 interface AddressDetailsProps<P = {}> extends React.FC<P> {
   defaultState: AddressDetailsDefaultState
 }
 
-const AddressForm: React.FC<FormRegistration & { name: string }> = ({ register, name }) => (
+const AddressForm: React.FC<FormRegistration & { name: string }> = ({ register, errors, name }) => (
   <>
-    <div className="form-group narrow d-flex">
-      <label htmlFor={`${name}.addressLine1`} className="w-25 d-flex align-items-center">
-        <small>Address Line 1</small>
-      </label>
-      <input
-        type="text"
-        className="form-control"
-        id={`${name}.addressLine1`}
-        name={`${name}.addressLine1`}
-        placeholder="Address Line 1"
-        ref={register}
-      />
-    </div>
-    <div className="form-group narrow d-flex">
-      <label htmlFor={`${name}.addressLine2`} className="w-25 d-flex align-items-center">
-        <small>Address Line 2</small>
-      </label>
-      <input
-        type="text"
-        className="form-control"
-        id={`${name}.addressLine2`}
-        name={`${name}.addressLine2`}
-        placeholder="Address Line 2"
-        ref={register}
-      />
-    </div>
-    <div className="form-group narrow d-flex">
-      <label htmlFor={`${name}.city`} className="w-25 d-flex align-items-center">
-        <small>City</small>
-      </label>
-      <input
-        type="text"
-        className="form-control"
-        id={`${name}.city`}
-        name={`${name}.city`}
-        placeholder="City"
-        ref={register}
-      />
-    </div>
-    <div className="form-group narrow d-flex">
-      <label htmlFor={`${name}.state`} className="w-25 d-flex align-items-center">
-        <small>State / Province</small>
-      </label>
-      <input
-        type="text"
-        className="form-control"
-        id={`${name}.state`}
-        name={`${name}.state`}
-        placeholder="State / Province"
-        ref={register}
-      />
-    </div>
-    <div className="form-group narrow d-flex">
-      <label htmlFor={`${name}.postalCode`} className="w-25 d-flex align-items-center">
-        <small>Postal Code</small>
-      </label>
-      <input
-        type="text"
-        className="form-control"
-        id={`${name}.postalCode`}
-        name={`${name}.postalCode`}
-        placeholder="Postal Code"
-        ref={register}
-      />
-    </div>
-    <div className="form-group narrow d-flex">
-      <label htmlFor={`${name}.country`} className="w-25 d-flex align-items-center">
-        <small>Country</small>
-      </label>
-      <input
-        type="text"
-        className="form-control"
-        id={`${name}.country`}
-        name={`${name}.country`}
-        placeholder="Country"
-        ref={register}
-      />
-    </div>
+    <FormLabelGroup
+      id={`${name}.addressLine1`}
+      label="Address line 1"
+      register={register}
+      errors={errors}
+    />
+    <FormLabelGroup
+      id={`${name}.addressLine2`}
+      label="Address line 2"
+      register={register}
+      errors={errors}
+    />
+    <FormLabelGroup id={`${name}.city`} label="City" register={register} errors={errors} />
+    <FormLabelGroup
+      id={`${name}.state`}
+      label="State / Province"
+      register={register}
+      errors={errors}
+    />
+    <FormLabelGroup
+      id={`${name}.postalCode`}
+      label="Postal code"
+      register={register}
+      errors={errors}
+    />
+    <FormLabelGroup id={`${name}.country`} label="Country" register={register} errors={errors} />
   </>
 )
 
-const AddressDetails: AddressDetailsProps<FormRegistration> = ({ register }) => {
+const AddressDetails: AddressDetailsProps<FormRegistration> = ({ register, errors }) => {
   return (
     <>
       <ul className="nav nav-pills mb-3" id="addresses" role="tablist">
@@ -127,7 +76,7 @@ const AddressDetails: AddressDetailsProps<FormRegistration> = ({ register }) => 
           role="tabpanel"
           aria-labelledby="billingaddress-tab"
         >
-          <AddressForm name="billingAddress" register={register} />
+          <AddressForm name="billingAddress" register={register} errors={errors} />
         </div>
         <div
           className="tab-pane fade"
@@ -135,7 +84,7 @@ const AddressDetails: AddressDetailsProps<FormRegistration> = ({ register }) => 
           role="tabpanel"
           aria-labelledby="shippingaddress-tab"
         >
-          <AddressForm name="shippingAddress" register={register} />
+          <AddressForm name="shippingAddress" register={register} errors={errors} />
         </div>
       </div>
     </>

@@ -1,40 +1,27 @@
 import React from 'react'
 
 import { AdditionalInfoDefaultState, FormRegistration } from '../../global'
+import { FormLabelGroup } from '../FormLabelGroup'
 
 interface AdditionalInfoProps<P = {}> extends React.FC<P> {
   defaultState: AdditionalInfoDefaultState
 }
 
-const AdditionalInfo: AdditionalInfoProps<FormRegistration> = ({ register }) => {
+const AdditionalInfo: AdditionalInfoProps<FormRegistration> = ({ register, errors }) => {
   return (
     <>
-      <div className="form-group narrow d-flex">
-        <label htmlFor="additionalInfo.currency" className="w-25 d-flex align-items-center">
-          <small>Currency</small>
-        </label>
-        <input
-          type="text"
-          className="form-control"
-          id="additionalInfo.currency"
-          name="additionalInfo.currency"
-          placeholder="Currency"
-          ref={register}
-        />
-      </div>
-      <div className="form-group narrow d-flex">
-        <label htmlFor="additionalInfo.paymentTerms" className="w-25 d-flex align-items-center">
-          <small>Payment Terms</small>
-        </label>
-        <input
-          type="text"
-          className="form-control"
-          id="additionalInfo.paymentTerms"
-          name="additionalInfo.paymentTerms"
-          placeholder="Payment Terms"
-          ref={register}
-        />
-      </div>
+      <FormLabelGroup
+        id="additionalInfo.currency"
+        label="Currency"
+        register={register}
+        errors={errors}
+      />
+      <FormLabelGroup
+        id="additionalInfo.paymentTerms"
+        label="Payment terms"
+        register={register}
+        errors={errors}
+      />
     </>
   )
 }

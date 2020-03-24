@@ -1,4 +1,4 @@
-import { FieldElement } from 'react-hook-form'
+import { FieldElement, FieldName, ValidationOptions } from 'react-hook-form'
 
 type LineItem = {
   item: string
@@ -9,8 +9,29 @@ type LineItem = {
 
 type InvoiceActions = 'Save' | 'SaveAsDraft' | 'NagClientToPay' | 'DownloadPDF'
 
+type Errors = FieldErrors<FormValues>
+
 type FormRegistration = {
   register<Element extends FieldElement = FieldElement>(): (ref: Element | null) => void
+  register<Element extends FieldElement = FieldElement>(
+    validationOptions: ValidationOptions
+  ): (ref: Element | null) => void
+  register<Element extends FieldElement = FieldElement>(
+    name: FieldName<FormValues>,
+    validationOptions?: ValidationOptions
+  ): void
+  register<Element extends FieldElement = FieldElement>(
+    namesWithValidationOptions: Record<FieldName<FormValues>, ValidationOptions>
+  ): void
+  register<Element extends FieldElement = FieldElement>(
+    ref: Element,
+    validationOptions?: ValidationOptions
+  ): void
+  register<Element extends FieldElement = FieldElement>(
+    refOrValidationOptions: ValidationOptions | Element | null,
+    validationOptions?: ValidationOptions
+  ): ((ref: Element | null) => void) | void
+  errors: Errors
 }
 
 type ClientDetailsDefaultState = {
