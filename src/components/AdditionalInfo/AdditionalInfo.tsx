@@ -1,6 +1,5 @@
 import React from 'react'
 
-import { AdditionalInfoDefaultState, FormRegistration } from '../../global'
 import { FormLabelGroup } from '../FormLabelGroup'
 
 interface AdditionalInfoProps<P = {}> extends React.FC<P> {

@@ -1,4 +1,4 @@
-import { calculateLineTotal, calculateSubTotal, calculateTax } from './utils'
+import { calculateLineTotal, calculateSubTotal, calculateTax } from './invoicing'
 
 describe('Utils tests', () => {
   describe('Single line', () => {

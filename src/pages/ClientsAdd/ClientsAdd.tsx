@@ -7,13 +7,6 @@ import { Contacts } from '../../components/Contacts'
 import { AdditionalInfo } from '../../components/AdditionalInfo'
 import { AddressDetails } from '../../components/AddressDetails'
 import { Card } from '../../components/Card'
-import {
-  ClientDetailsDefaultState,
-  ContactsDefaultState,
-  AdditionalInfoDefaultState,
-  AddressDefaultState
-} from '../../global'
-import clsx from 'clsx'
 
 interface ClientAddFormData {
   clientDetails: ClientDetailsDefaultState

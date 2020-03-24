@@ -1,5 +1,3 @@
-import { FieldElement, FieldName, ValidationOptions } from 'react-hook-form'
-
 type LineItem = {
   item: string
   description: string

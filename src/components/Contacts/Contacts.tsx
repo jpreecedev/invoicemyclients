@@ -1,6 +1,5 @@
 import React from 'react'
 
-import { FormRegistration, ContactsDefaultState } from '../../global'
 import { FormLabelGroup } from '../FormLabelGroup'
 
 interface ContactsProps<P = {}> extends React.FC<P> {

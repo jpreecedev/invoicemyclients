@@ -1,6 +1,5 @@
 import React from 'react'
 
-import { AddressDetailsDefaultState, FormRegistration } from '../../global'
 import { FormLabelGroup } from '../FormLabelGroup'
 
 interface AddressDetailsProps<P = {}> extends React.FC<P> {

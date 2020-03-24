@@ -1,6 +1,5 @@
 import React from 'react'
 
-import { FormRegistration, ClientDetailsDefaultState } from '../../global'
 import { FormLabelGroup } from '../FormLabelGroup'
 
 interface ClientDetailsProps<P = {}> extends React.FC<P> {

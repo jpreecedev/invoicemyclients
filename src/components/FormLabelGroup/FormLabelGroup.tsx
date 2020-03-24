@@ -1,8 +1,6 @@
 import React from 'react'
 import clsx from 'clsx'
 
-import { FormRegistration } from '../../global'
-
 interface FormLabelGroupProps {
   id: string
   label: string
@@ -19,6 +17,18 @@ const resolve = (obj: any, path: any) => {
   return current
 }
 
+const getValidationMessage = (label: string, error: Errors): string => {
+  switch (error.type) {
+    case 'required':
+      return `${label} is required`
+    case 'maxLength':
+      return `${label} is too long`
+    case 'minLength':
+      return `${label} is too short`
+  }
+  return 'This field is invalid'
+}
+
 const FormLabelGroup: React.FC<FormLabelGroupProps & FormRegistration> = ({
   id,
   label,
@@ -26,14 +36,13 @@ const FormLabelGroup: React.FC<FormLabelGroupProps & FormRegistration> = ({
   errors,
   validation = { required: false }
 }) => {
-  const hasError = resolve(errors || {}, id)
-  debugger
+  const error = resolve(errors || {}, id)
   return (
     <div className="form-label-group">
       <input
         type="text"
         className={clsx('form-control form-control-flush', {
-          'is-invalid': hasError
+          'is-invalid': error
         })}
         id={id}
         name={id}
@@ -41,7 +50,7 @@ const FormLabelGroup: React.FC<FormLabelGroupProps & FormRegistration> = ({
         ref={register(validation)}
       />
       <label htmlFor={id}>{label}</label>
-      {hasError && <div className="invalid-feedback">{`${label} is required`}</div>}
+      {error && <div className="invalid-feedback">{getValidationMessage(label, error)}</div>}
     </div>
   )
 }
