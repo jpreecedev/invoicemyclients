@@ -1,53 +1,95 @@
 import React from 'react'
 
-const AddressForm = () => (
-  <form>
+import { AddressDetailsDefaultState, FormRegistration } from '../../global'
+
+interface AddressDetailsProps<P = {}> extends React.FC<P> {
+  defaultState: AddressDetailsDefaultState
+}
+
+const AddressForm: React.FC<FormRegistration & { name: string }> = ({ register, name }) => (
+  <>
     <div className="form-group narrow d-flex">
-      <label htmlFor="street" className="w-25 d-flex align-items-center">
-        <small>Street</small>
-      </label>
-      <input type="text" className="form-control" id="street" placeholder="Street" />
-    </div>
-    <div className="form-group narrow d-flex">
-      <label htmlFor="addressLine1" className="w-25 d-flex align-items-center">
+      <label htmlFor={`${name}.addressLine1`} className="w-25 d-flex align-items-center">
         <small>Address Line 1</small>
       </label>
-      <input type="text" className="form-control" id="addressLine1" placeholder="Address Line 1" />
+      <input
+        type="text"
+        className="form-control"
+        id={`${name}.addressLine1`}
+        name={`${name}.addressLine1`}
+        placeholder="Address Line 1"
+        ref={register}
+      />
     </div>
     <div className="form-group narrow d-flex">
-      <label htmlFor="addressLine2" className="w-25 d-flex align-items-center">
+      <label htmlFor={`${name}.addressLine2`} className="w-25 d-flex align-items-center">
         <small>Address Line 2</small>
       </label>
-      <input type="text" className="form-control" id="addressLine2" placeholder="Address Line 2" />
+      <input
+        type="text"
+        className="form-control"
+        id={`${name}.addressLine2`}
+        name={`${name}.addressLine2`}
+        placeholder="Address Line 2"
+        ref={register}
+      />
     </div>
     <div className="form-group narrow d-flex">
-      <label htmlFor="city" className="w-25 d-flex align-items-center">
+      <label htmlFor={`${name}.city`} className="w-25 d-flex align-items-center">
         <small>City</small>
       </label>
-      <input type="text" className="form-control" id="city" placeholder="City" />
+      <input
+        type="text"
+        className="form-control"
+        id={`${name}.city`}
+        name={`${name}.city`}
+        placeholder="City"
+        ref={register}
+      />
     </div>
     <div className="form-group narrow d-flex">
-      <label htmlFor="state" className="w-25 d-flex align-items-center">
+      <label htmlFor={`${name}.state`} className="w-25 d-flex align-items-center">
         <small>State / Province</small>
       </label>
-      <input type="text" className="form-control" id="state" placeholder="State / Province" />
+      <input
+        type="text"
+        className="form-control"
+        id={`${name}.state`}
+        name={`${name}.state`}
+        placeholder="State / Province"
+        ref={register}
+      />
     </div>
     <div className="form-group narrow d-flex">
-      <label htmlFor="postalCode" className="w-25 d-flex align-items-center">
+      <label htmlFor={`${name}.postalCode`} className="w-25 d-flex align-items-center">
         <small>Postal Code</small>
       </label>
-      <input type="text" className="form-control" id="postalCode" placeholder="Postal Code" />
+      <input
+        type="text"
+        className="form-control"
+        id={`${name}.postalCode`}
+        name={`${name}.postalCode`}
+        placeholder="Postal Code"
+        ref={register}
+      />
     </div>
     <div className="form-group narrow d-flex">
-      <label htmlFor="country" className="w-25 d-flex align-items-center">
+      <label htmlFor={`${name}.country`} className="w-25 d-flex align-items-center">
         <small>Country</small>
       </label>
-      <input type="text" className="form-control" id="country" placeholder="Country" />
+      <input
+        type="text"
+        className="form-control"
+        id={`${name}.country`}
+        name={`${name}.country`}
+        placeholder="Country"
+        ref={register}
+      />
     </div>
-  </form>
+  </>
 )
 
-const AddressDetails = () => {
+const AddressDetails: AddressDetailsProps<FormRegistration> = ({ register }) => {
   return (
     <>
       <ul className="nav nav-pills mb-3" id="addresses" role="tablist">
@@ -81,23 +123,42 @@ const AddressDetails = () => {
       <div className="tab-content" id="addressesContent">
         <div
           className="tab-pane fade show active"
-          id="shippingaddress"
-          role="tabpanel"
-          aria-labelledby="shippingaddress-tab"
-        >
-          <AddressForm />
-        </div>
-        <div
-          className="tab-pane fade"
           id="billingaddress"
           role="tabpanel"
           aria-labelledby="billingaddress-tab"
         >
-          <AddressForm />
+          <AddressForm name="billingAddress" register={register} />
+        </div>
+        <div
+          className="tab-pane fade"
+          id="shippingaddress"
+          role="tabpanel"
+          aria-labelledby="shippingaddress-tab"
+        >
+          <AddressForm name="shippingAddress" register={register} />
         </div>
       </div>
     </>
   )
+}
+
+AddressDetails.defaultState = {
+  shippingAddress: {
+    addressLine1: '',
+    addressLine2: '',
+    city: '',
+    country: '',
+    postalCode: '',
+    state: ''
+  },
+  billingAddress: {
+    addressLine1: '',
+    addressLine2: '',
+    city: '',
+    country: '',
+    postalCode: '',
+    state: ''
+  }
 }
 
 export { AddressDetails }

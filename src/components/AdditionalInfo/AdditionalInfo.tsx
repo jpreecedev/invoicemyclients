@@ -1,22 +1,47 @@
 import React from 'react'
 
-const AdditionalInfo = () => {
+import { AdditionalInfoDefaultState, FormRegistration } from '../../global'
+
+interface AdditionalInfoProps<P = {}> extends React.FC<P> {
+  defaultState: AdditionalInfoDefaultState
+}
+
+const AdditionalInfo: AdditionalInfoProps<FormRegistration> = ({ register }) => {
   return (
-    <form>
+    <>
       <div className="form-group narrow d-flex">
-        <label htmlFor="currency" className="w-25 d-flex align-items-center">
+        <label htmlFor="additionalInfo.currency" className="w-25 d-flex align-items-center">
           <small>Currency</small>
         </label>
-        <input type="text" className="form-control" id="currency" placeholder="Currency" />
+        <input
+          type="text"
+          className="form-control"
+          id="additionalInfo.currency"
+          name="additionalInfo.currency"
+          placeholder="Currency"
+          ref={register}
+        />
       </div>
       <div className="form-group narrow d-flex">
-        <label htmlFor="paymentTerms" className="w-25 d-flex align-items-center">
+        <label htmlFor="additionalInfo.paymentTerms" className="w-25 d-flex align-items-center">
           <small>Payment Terms</small>
         </label>
-        <input type="text" className="form-control" id="paymentTerms" placeholder="Payment Terms" />
+        <input
+          type="text"
+          className="form-control"
+          id="additionalInfo.paymentTerms"
+          name="additionalInfo.paymentTerms"
+          placeholder="Payment Terms"
+          ref={register}
+        />
       </div>
-    </form>
+    </>
   )
+}
+
+AdditionalInfo.defaultState = {
+  currency: '',
+  paymentTerms: ''
 }
 
 export { AdditionalInfo }
