@@ -1,5 +1,7 @@
 import React from 'react'
+import firebase from 'firebase/app'
 import { useForm } from 'react-hook-form'
+import { useAuthState } from 'react-firebase-hooks/auth'
 
 import { AuthenticatedPage } from '../../components/AuthenticatedPage'
 import { ClientDetails } from '../../components/ClientDetails'
@@ -8,13 +10,7 @@ import { AdditionalInfo } from '../../components/AdditionalInfo'
 import { AddressDetails } from '../../components/AddressDetails'
 import { Card } from '../../components/Card'
 
-interface ClientAddFormData {
-  clientDetails: ClientDetailsDefaultState
-  contacts: ContactsDefaultState
-  billingAddress: AddressDefaultState
-  shippingAddress: AddressDefaultState
-  additionalInfo: AdditionalInfoDefaultState
-}
+import { CLIENTS_REF } from '../../constants/firebase'
 
 const defaultFormData: ClientAddFormData = {
   clientDetails: ClientDetails.defaultState,
@@ -27,10 +23,15 @@ const defaultFormData: ClientAddFormData = {
 const ClientsAddPage = () => {
   const [formData, setFormData] = React.useState<ClientAddFormData>(defaultFormData)
   const { register, errors, handleSubmit } = useForm<ClientAddFormData>()
+  const [user] = useAuthState(firebase.auth())
 
   const handleChange = (data: ClientAddFormData) => {
     setFormData(data)
-    debugger
+
+    firebase
+      .database()
+      .ref(`${user?.uid}/${CLIENTS_REF}/`)
+      .push(data)
   }
 
   return (

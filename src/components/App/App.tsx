@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route, Redirect, RouteProps } from 're
 import firebase from 'firebase/app'
 import 'firebase/analytics'
 import 'firebase/auth'
+import 'firebase/database'
 import { useAuthState } from 'react-firebase-hooks/auth'
 
 import { ROUTES } from '../../routes'

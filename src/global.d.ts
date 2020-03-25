@@ -65,3 +65,11 @@ type AdditionalInfoDefaultState = {
   currency: string
   paymentTerms: string
 }
+
+type ClientAddFormData = {
+  clientDetails: ClientDetailsDefaultState
+  contacts: ContactsDefaultState
+  billingAddress: AddressDefaultState
+  shippingAddress: AddressDefaultState
+  additionalInfo: AdditionalInfoDefaultState
+}
