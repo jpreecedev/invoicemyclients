@@ -32,7 +32,7 @@ type FormRegistration = {
   errors: Errors
 }
 
-type ClientDetailsFormDefaultState = {
+type ClientDetails = {
   companyName: string
   idNumber: string
   website: string
@@ -40,14 +40,14 @@ type ClientDetailsFormDefaultState = {
   phoneNumber: string
 }
 
-type ContactsDefaultState = {
+type Contact = {
   firstName: string
   lastName: string
   email: string
   phoneNumber: string
 }
 
-type AddressDefaultState = {
+type Address = {
   addressLine1: string
   addressLine2: string
   city: string
@@ -56,20 +56,23 @@ type AddressDefaultState = {
   country: string
 }
 
-type AddressDetailsDefaultState = {
-  shippingAddress: AddressDefaultState
-  billingAddress: AddressDefaultState
-}
-
-type AdditionalInfoDefaultState = {
+type AdditionalInfo = {
   currency: string
   paymentTerms: string
 }
 
 type ClientAddFormData = firebase.database.DataSnapshot & {
-  clientDetails: ClientDetailsDefaultState
-  contacts: ContactsDefaultState
-  billingAddress: AddressDefaultState
-  shippingAddress: AddressDefaultState
-  additionalInfo: AdditionalInfoDefaultState
+  clientDetails: ClientDetails
+  contacts: Contact
+  billingAddress: Address
+  shippingAddress: Address
+  additionalInfo: AdditionalInfo
+}
+
+type ClientsProviderProps = FormRegistration & {
+  clientDetails: ClientDetails | undefined
+  contacts: Contact | undefined
+  billingAddress: Address | undefined
+  shippingAddress: Address | undefined
+  additionalInfo: AdditionalInfo | undefined
 }

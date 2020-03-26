@@ -3,12 +3,10 @@ import React from 'react'
 import { FormLabelGroup } from '../FormLabelGroup'
 import { ClientsContext } from '../../providers'
 
-interface AddressDetailsProps<P = {}> extends React.FC<P> {
-  defaultState: AddressDetailsDefaultState
-}
-
-const AddressForm: React.FC<{ name: string }> = ({ name }) => {
-  const { register, errors } = React.useContext<FormRegistration>(ClientsContext)
+const AddressForm: React.FC<{ name: 'shippingAddress' | 'billingAddress' }> = ({ name }) => {
+  const { register, errors, shippingAddress, billingAddress } = React.useContext<
+    ClientsProviderProps
+  >(ClientsContext)
 
   return (
     <>
@@ -17,32 +15,56 @@ const AddressForm: React.FC<{ name: string }> = ({ name }) => {
         label="Address line 1"
         register={register}
         errors={errors}
+        defaultValue={
+          name === 'shippingAddress' ? shippingAddress?.addressLine1 : billingAddress?.addressLine1
+        }
       />
       <FormLabelGroup
         id={`${name}.addressLine2`}
         label="Address line 2"
         register={register}
         errors={errors}
+        defaultValue={
+          name === 'shippingAddress' ? shippingAddress?.addressLine2 : billingAddress?.addressLine2
+        }
       />
-      <FormLabelGroup id={`${name}.city`} label="City" register={register} errors={errors} />
+      <FormLabelGroup
+        id={`${name}.city`}
+        label="City"
+        register={register}
+        errors={errors}
+        defaultValue={name === 'shippingAddress' ? shippingAddress?.city : billingAddress?.city}
+      />
       <FormLabelGroup
         id={`${name}.state`}
         label="State / Province"
         register={register}
         errors={errors}
+        defaultValue={name === 'shippingAddress' ? shippingAddress?.state : billingAddress?.state}
       />
       <FormLabelGroup
         id={`${name}.postalCode`}
         label="Postal code"
         register={register}
         errors={errors}
+        defaultValue={
+          name === 'shippingAddress' ? shippingAddress?.postalCode : billingAddress?.postalCode
+        }
       />
-      <FormLabelGroup id={`${name}.country`} label="Country" register={register} errors={errors} />
+      <FormLabelGroup
+        id={`${name}.country`}
+        label="Country"
+        register={register}
+        errors={errors}
+        defaultValue={
+          name === 'shippingAddress' ? shippingAddress?.country : billingAddress?.country
+        }
+      />
     </>
   )
 }
 
-const AddressDetails: AddressDetailsProps = () => {
+const AddressDetails: React.FC = () => {
   return (
     <>
       <ul className="nav nav-pills mb-3" id="addresses" role="tablist">
@@ -93,25 +115,6 @@ const AddressDetails: AddressDetailsProps = () => {
       </div>
     </>
   )
-}
-
-AddressDetails.defaultState = {
-  shippingAddress: {
-    addressLine1: '',
-    addressLine2: '',
-    city: '',
-    country: '',
-    postalCode: '',
-    state: ''
-  },
-  billingAddress: {
-    addressLine1: '',
-    addressLine2: '',
-    city: '',
-    country: '',
-    postalCode: '',
-    state: ''
-  }
 }
 
 export { AddressDetails }

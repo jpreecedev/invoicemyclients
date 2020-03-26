@@ -3,12 +3,8 @@ import React from 'react'
 import { FormLabelGroup } from '../FormLabelGroup'
 import { ClientsContext } from '../../providers'
 
-interface ContactsProps<P = {}> extends React.FC<P> {
-  defaultState: ContactsDefaultState
-}
-
-const Contacts: ContactsProps = () => {
-  const { register, errors } = React.useContext<FormRegistration>(ClientsContext)
+const Contacts: React.FC = () => {
+  const { register, errors, contacts } = React.useContext<ClientsProviderProps>(ClientsContext)
 
   return (
     <>
@@ -18,6 +14,7 @@ const Contacts: ContactsProps = () => {
         register={register}
         errors={errors}
         validation={{ required: true, minLength: 1, maxLength: 50 }}
+        defaultValue={contacts?.firstName}
       />
       <FormLabelGroup
         id="contacts.lastName"
@@ -25,28 +22,24 @@ const Contacts: ContactsProps = () => {
         register={register}
         errors={errors}
         validation={{ required: true, minLength: 1, maxLength: 50 }}
+        defaultValue={contacts?.lastName}
       />
       <FormLabelGroup
         id="contacts.email"
         label="Email address"
         register={register}
         errors={errors}
+        defaultValue={contacts?.email}
       />
       <FormLabelGroup
         id="contacts.phoneNumber"
         label="Phone number"
         register={register}
         errors={errors}
+        defaultValue={contacts?.phoneNumber}
       />
     </>
   )
-}
-
-Contacts.defaultState = {
-  email: '',
-  firstName: '',
-  lastName: '',
-  phoneNumber: ''
 }
 
 export { Contacts }

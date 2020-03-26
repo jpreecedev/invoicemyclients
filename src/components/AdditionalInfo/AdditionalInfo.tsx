@@ -3,12 +3,10 @@ import React from 'react'
 import { FormLabelGroup } from '../FormLabelGroup'
 import { ClientsContext } from '../../providers'
 
-interface AdditionalInfoProps<P = {}> extends React.FC<P> {
-  defaultState: AdditionalInfoDefaultState
-}
-
-const AdditionalInfo: AdditionalInfoProps = () => {
-  const { register, errors } = React.useContext<FormRegistration>(ClientsContext)
+const AdditionalInfo: React.FC = () => {
+  const { register, errors, additionalInfo } = React.useContext<ClientsProviderProps>(
+    ClientsContext
+  )
 
   return (
     <>
@@ -17,20 +15,17 @@ const AdditionalInfo: AdditionalInfoProps = () => {
         label="Currency"
         register={register}
         errors={errors}
+        defaultValue={additionalInfo?.currency}
       />
       <FormLabelGroup
         id="additionalInfo.paymentTerms"
         label="Payment terms"
         register={register}
         errors={errors}
+        defaultValue={additionalInfo?.paymentTerms}
       />
     </>
   )
-}
-
-AdditionalInfo.defaultState = {
-  currency: '',
-  paymentTerms: ''
 }
 
 export { AdditionalInfo }

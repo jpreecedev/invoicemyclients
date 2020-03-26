@@ -5,6 +5,7 @@ interface FormLabelGroupProps {
   id: string
   label: string
   validation?: Record<string, any>
+  defaultValue?: string
 }
 
 const resolve = (obj: any, path: any) => {
@@ -34,6 +35,7 @@ const FormLabelGroup: React.FC<FormLabelGroupProps & FormRegistration> = ({
   label,
   register,
   errors,
+  defaultValue = undefined,
   validation = { required: false }
 }) => {
   const error = resolve(errors || {}, id)
@@ -48,6 +50,7 @@ const FormLabelGroup: React.FC<FormLabelGroupProps & FormRegistration> = ({
         name={id}
         placeholder={label}
         ref={register(validation)}
+        defaultValue={defaultValue}
       />
       <label htmlFor={id}>{label}</label>
       {error && <div className="invalid-feedback">{getValidationMessage(label, error)}</div>}
