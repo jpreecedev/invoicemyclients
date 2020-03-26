@@ -9,3 +9,51 @@ body {
 .table .thead-light th {
   background-color: #e9ecef;
 }
+
+.Toastify__toast--success {
+  padding-right: 16px;
+  padding-left: 16px;
+  color: #155724;
+  background-color: #d4edda;
+  border-color: #c3e6cb;
+}
+
+.Toastify__close-button--success {
+  color: #155724;
+}
+
+.Toastify__toast--error {
+  padding-right: 16px;
+  padding-left: 16px;
+  color: #721c24;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+}
+
+.Toastify__close-button--error {
+  color: #721c24;
+}
+
+.Toastify__toast--info {
+  padding-right: 16px;
+  padding-left: 16px;
+  color: #004085;
+  background-color: #cce5ff;
+  border-color: #b8daff;
+}
+
+.Toastify__close-button--info {
+  color: #004085;
+}
+
+.Toastify__toast--warning {
+  padding-right: 16px;
+  padding-left: 16px;
+  color: #856404;
+  background-color: #fff3cd;
+  border-color: #ffeeba;
+}
+
+.Toastify__close-button--warning {
+  color: #856404;
+}

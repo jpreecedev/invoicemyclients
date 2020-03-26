@@ -2,6 +2,7 @@ import React from 'react'
 import firebase from 'firebase/app'
 import { useForm } from 'react-hook-form'
 import { useAuthState } from 'react-firebase-hooks/auth'
+import { useHistory } from 'react-router-dom'
 
 import { AuthenticatedPage } from '../../components/AuthenticatedPage'
 import { ClientDetails } from '../../components/ClientDetails'
@@ -11,27 +12,26 @@ import { AddressDetails } from '../../components/AddressDetails'
 import { Card } from '../../components/Card'
 
 import { CLIENTS_REF } from '../../constants/firebase'
-
-const defaultFormData: ClientAddFormData = {
-  clientDetails: ClientDetails.defaultState,
-  contacts: Contacts.defaultState,
-  billingAddress: AddressDetails.defaultState.billingAddress,
-  shippingAddress: AddressDetails.defaultState.shippingAddress,
-  additionalInfo: AdditionalInfo.defaultState
-}
+import { ROUTES } from '../../routes'
+import { toast } from 'react-toastify'
 
 const ClientsAddPage = () => {
-  const [formData, setFormData] = React.useState<ClientAddFormData>(defaultFormData)
   const { register, errors, handleSubmit } = useForm<ClientAddFormData>()
   const [user] = useAuthState(firebase.auth())
+  const history = useHistory()
 
   const handleChange = (data: ClientAddFormData) => {
-    setFormData(data)
-
     firebase
       .database()
       .ref(`${user?.uid}/${CLIENTS_REF}/`)
-      .push(data)
+      .push(data, error => {
+        if (!error) {
+          toast('Client was successfully added', { type: 'success' })
+          return history.push(ROUTES.clients.base)
+        }
+        console.error(error)
+        toast('There was an error creating the client', { type: 'error' })
+      })
   }
 
   return (
