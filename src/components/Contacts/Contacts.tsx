@@ -1,12 +1,15 @@
 import React from 'react'
 
 import { FormLabelGroup } from '../FormLabelGroup'
+import { ClientsContext } from '../../providers'
 
 interface ContactsProps<P = {}> extends React.FC<P> {
   defaultState: ContactsDefaultState
 }
 
-const Contacts: ContactsProps<FormRegistration> = ({ register, errors }) => {
+const Contacts: ContactsProps = () => {
+  const { register, errors } = React.useContext<FormRegistration>(ClientsContext)
+
   return (
     <>
       <FormLabelGroup

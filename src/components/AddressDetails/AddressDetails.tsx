@@ -1,43 +1,48 @@
 import React from 'react'
 
 import { FormLabelGroup } from '../FormLabelGroup'
+import { ClientsContext } from '../../providers'
 
 interface AddressDetailsProps<P = {}> extends React.FC<P> {
   defaultState: AddressDetailsDefaultState
 }
 
-const AddressForm: React.FC<FormRegistration & { name: string }> = ({ register, errors, name }) => (
-  <>
-    <FormLabelGroup
-      id={`${name}.addressLine1`}
-      label="Address line 1"
-      register={register}
-      errors={errors}
-    />
-    <FormLabelGroup
-      id={`${name}.addressLine2`}
-      label="Address line 2"
-      register={register}
-      errors={errors}
-    />
-    <FormLabelGroup id={`${name}.city`} label="City" register={register} errors={errors} />
-    <FormLabelGroup
-      id={`${name}.state`}
-      label="State / Province"
-      register={register}
-      errors={errors}
-    />
-    <FormLabelGroup
-      id={`${name}.postalCode`}
-      label="Postal code"
-      register={register}
-      errors={errors}
-    />
-    <FormLabelGroup id={`${name}.country`} label="Country" register={register} errors={errors} />
-  </>
-)
+const AddressForm: React.FC<{ name: string }> = ({ name }) => {
+  const { register, errors } = React.useContext<FormRegistration>(ClientsContext)
 
-const AddressDetails: AddressDetailsProps<FormRegistration> = ({ register, errors }) => {
+  return (
+    <>
+      <FormLabelGroup
+        id={`${name}.addressLine1`}
+        label="Address line 1"
+        register={register}
+        errors={errors}
+      />
+      <FormLabelGroup
+        id={`${name}.addressLine2`}
+        label="Address line 2"
+        register={register}
+        errors={errors}
+      />
+      <FormLabelGroup id={`${name}.city`} label="City" register={register} errors={errors} />
+      <FormLabelGroup
+        id={`${name}.state`}
+        label="State / Province"
+        register={register}
+        errors={errors}
+      />
+      <FormLabelGroup
+        id={`${name}.postalCode`}
+        label="Postal code"
+        register={register}
+        errors={errors}
+      />
+      <FormLabelGroup id={`${name}.country`} label="Country" register={register} errors={errors} />
+    </>
+  )
+}
+
+const AddressDetails: AddressDetailsProps = () => {
   return (
     <>
       <ul className="nav nav-pills mb-3" id="addresses" role="tablist">
@@ -75,7 +80,7 @@ const AddressDetails: AddressDetailsProps<FormRegistration> = ({ register, error
           role="tabpanel"
           aria-labelledby="billingaddress-tab"
         >
-          <AddressForm name="billingAddress" register={register} errors={errors} />
+          <AddressForm name="billingAddress" />
         </div>
         <div
           className="tab-pane fade"
@@ -83,7 +88,7 @@ const AddressDetails: AddressDetailsProps<FormRegistration> = ({ register, error
           role="tabpanel"
           aria-labelledby="shippingaddress-tab"
         >
-          <AddressForm name="shippingAddress" register={register} errors={errors} />
+          <AddressForm name="shippingAddress" />
         </div>
       </div>
     </>

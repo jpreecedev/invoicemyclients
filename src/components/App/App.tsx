@@ -14,7 +14,7 @@ import { DashboardPage } from '../../pages/Dashboard'
 import { InvoicesPage } from '../../pages/Invoices'
 import { InvoicesAddPage } from '../../pages/InvoicesAdd'
 import { ClientsPage } from '../../pages/Clients'
-import { ClientsAddPage } from '../../pages/ClientsAdd'
+import { ClientsUpdatePage } from '../../pages/ClientsUpdate'
 
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_API_KEY,
@@ -66,8 +66,8 @@ const App: React.FC = () => {
         <AuthenticatedRoute exact path={ROUTES.clients.base}>
           <ClientsPage />
         </AuthenticatedRoute>
-        <AuthenticatedRoute exact path={ROUTES.clients.add}>
-          <ClientsAddPage />
+        <AuthenticatedRoute exact path={`${ROUTES.clients.addEdit}/:id?`}>
+          <ClientsUpdatePage />
         </AuthenticatedRoute>
         <Route path="*">
           <ErrorPage />

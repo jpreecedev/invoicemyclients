@@ -1,8 +1,12 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+
 import { useFirebaseList } from '../../hooks'
+import { ROUTES } from '../../routes'
+import { CLIENTS_REF } from '../../constants/firebase'
 
 const ClientsList = () => {
-  const [clientData, component] = useFirebaseList<ClientAddFormData>()
+  const [clientData, component] = useFirebaseList<ClientAddFormData>(CLIENTS_REF)
 
   if (!clientData || !clientData.length) {
     if (component === null) {
@@ -31,7 +35,11 @@ const ClientsList = () => {
             {clientData.map((item, index) => {
               return (
                 <tr key={index}>
-                  <td>{item.clientDetails.companyName}</td>
+                  <td>
+                    <Link to={`${ROUTES.clients.addEdit}/${item.key}`}>
+                      {item.clientDetails.companyName}
+                    </Link>
+                  </td>
                   <td>{`${item.contacts.firstName} ${item.contacts.lastName}`}</td>
                   <td>{item.clientDetails.phoneNumber}</td>
                 </tr>

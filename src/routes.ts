@@ -8,8 +8,8 @@ const ROUTES = {
     add: '/invoices/add'
   },
   clients: {
-    base: '/clients',
-    add: '/clients/add'
+    base: '/clients/list',
+    addEdit: '/client'
   },
   nagging: {
     base: '/nagging'

@@ -1,10 +1,10 @@
 import React from 'react'
 import { renderWithRouter } from '../../test-utils'
 
-import { ClientsAddPage } from './ClientsAdd'
+import { ClientsUpdatePage } from './ClientsUpdate'
 
 describe('<ClientsAdd /> tests', () => {
   it('should match snapshot', () => {
-    expect(renderWithRouter(<ClientsAddPage />).container).toMatchSnapshot()
+    expect(renderWithRouter(<ClientsUpdatePage />).container).toMatchSnapshot()
   })
 })

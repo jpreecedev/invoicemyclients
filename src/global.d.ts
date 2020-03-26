@@ -32,7 +32,7 @@ type FormRegistration = {
   errors: Errors
 }
 
-type ClientDetailsDefaultState = {
+type ClientDetailsFormDefaultState = {
   companyName: string
   idNumber: string
   website: string
@@ -66,7 +66,7 @@ type AdditionalInfoDefaultState = {
   paymentTerms: string
 }
 
-type ClientAddFormData = {
+type ClientAddFormData = firebase.database.DataSnapshot & {
   clientDetails: ClientDetailsDefaultState
   contacts: ContactsDefaultState
   billingAddress: AddressDefaultState

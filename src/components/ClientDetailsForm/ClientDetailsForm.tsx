@@ -1,12 +1,15 @@
 import React from 'react'
 
 import { FormLabelGroup } from '../FormLabelGroup'
+import { ClientsContext } from '../../providers'
 
-interface ClientDetailsProps<P = {}> extends React.FC<P> {
-  defaultState: ClientDetailsDefaultState
+interface ClientDetailsFormProps<P = {}> extends React.FC<P> {
+  defaultState: ClientDetailsFormDefaultState
 }
 
-const ClientDetails: ClientDetailsProps<FormRegistration> = ({ register, errors }) => {
+const ClientDetailsForm: ClientDetailsFormProps = () => {
+  const { register, errors } = React.useContext<FormRegistration>(ClientsContext)
+
   return (
     <>
       <FormLabelGroup
@@ -44,7 +47,7 @@ const ClientDetails: ClientDetailsProps<FormRegistration> = ({ register, errors 
   )
 }
 
-ClientDetails.defaultState = {
+ClientDetailsForm.defaultState = {
   companyName: '',
   idNumber: '',
   phoneNumber: '',
@@ -52,4 +55,4 @@ ClientDetails.defaultState = {
   website: ''
 }
 
-export { ClientDetails }
+export { ClientDetailsForm }

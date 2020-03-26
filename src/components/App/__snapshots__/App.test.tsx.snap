@@ -62,7 +62,7 @@ exports[`<App /> tests should match snapshot 1`] = `
           >
             <a
               class="nav-link"
-              href="/clients"
+              href="/clients/list"
             >
               Clients
             </a>

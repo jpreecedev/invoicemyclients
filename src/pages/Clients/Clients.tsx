@@ -9,7 +9,7 @@ const ClientsPage = () => {
   return (
     <AuthenticatedPage title="Clients">
       <ClientsList />
-      <Link to={ROUTES.clients.add} className="btn btn-primary btn-sm d-inline">
+      <Link to={ROUTES.clients.addEdit} className="btn btn-primary btn-sm d-inline">
         Add New Client
       </Link>
     </AuthenticatedPage>
