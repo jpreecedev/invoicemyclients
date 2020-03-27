@@ -1,4 +1,6 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+import { ROUTES } from '../../routes'
 
 const ErrorPage: React.FC = () => {
   return (
@@ -14,9 +16,9 @@ const ErrorPage: React.FC = () => {
             </p>
 
             <div className="text-center">
-              <a className="btn btn-primary" href="#!">
+              <Link to={ROUTES.dashboard} className="btn btn-primary">
                 Back to safety
-              </a>
+              </Link>
             </div>
           </div>
         </div>

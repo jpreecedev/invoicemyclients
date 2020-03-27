@@ -76,3 +76,5 @@ type ClientsProviderProps = FormRegistration & {
   shippingAddress: Address | undefined
   additionalInfo: AdditionalInfo | undefined
 }
+
+type Suggestion = { key: string; value: Record<string, any> | string | null }

@@ -1,7 +1,10 @@
 import React from 'react'
 import { useForm, useFieldArray } from 'react-hook-form'
+import { AutoComplete } from '../AutoComplete'
 
 import { calculateLineTotal, calculateSubTotal, calculateTax } from '../../utils'
+import { useFirebaseList } from '../../hooks'
+import { CLIENTS_REF } from '../../constants/firebase'
 
 type FormData = {
   invoiceDate: string
@@ -27,6 +30,8 @@ const cleanFormData = (formData: FormData) => ({
 const Invoice: React.FC<InvoiceProps> = ({ onAction }) => {
   const [formData, setFormData] = React.useState<FormData>(defaultFormData)
   const { register, handleSubmit, control } = useForm<FormData>()
+  const [clients] = useFirebaseList<ClientAddFormData>(CLIENTS_REF)
+  const [selectedClientId, setSelectedClientId] = React.useState<string>('')
 
   const { fields, append, remove } = useFieldArray({
     control,
@@ -35,6 +40,14 @@ const Invoice: React.FC<InvoiceProps> = ({ onAction }) => {
 
   const callback = (action: InvoiceActions) => onAction && onAction(action, cleanFormData(formData))
   const addLineItem = () => append({ name: 'lineItems' })
+
+  const getAutoCompleteSuggestions = () =>
+    clients
+      ? clients.map(client => ({
+          key: client.clientDetails.companyName,
+          value: client.key
+        }))
+      : []
 
   const handleChange = (data: FormData) => {
     setFormData(data)
@@ -71,6 +84,25 @@ const Invoice: React.FC<InvoiceProps> = ({ onAction }) => {
       <div className="container">
         <div className="row">
           <div className="col-12 col-md-4 form-group">
+            <label htmlFor="client">Client</label>
+            <AutoComplete
+              placeholder="Select a client"
+              onSelected={suggestion => setSelectedClientId(suggestion.value as string)}
+              suggestions={getAutoCompleteSuggestions()}
+            />
+            <input
+              type="text"
+              className="form-control d-none"
+              id="client"
+              name="client"
+              data-testid="client"
+              placeholder="Client"
+              autoComplete="off"
+              defaultValue={selectedClientId}
+              ref={register}
+            />
+          </div>
+          <div className="col-12 col-md-4 form-group">
             <label htmlFor="invoiceDate">Invoice Date</label>
             <input
               type="date"
@@ -96,7 +128,9 @@ const Invoice: React.FC<InvoiceProps> = ({ onAction }) => {
               ref={register}
             />
           </div>
-          <div className="col-12 col-md-4 form-group">
+        </div>
+        <div className="row">
+          <div className="col-12 col-md-4 form-group col-auto ml-auto">
             <label htmlFor="dueDate">Due Date</label>
             <input
               type="date"
@@ -109,9 +143,7 @@ const Invoice: React.FC<InvoiceProps> = ({ onAction }) => {
               ref={register}
             />
           </div>
-        </div>
-        <div className="row">
-          <div className="col-12 col-md-4 form-group col-auto ml-auto">
+          <div className="col-12 col-md-4 form-group">
             <label htmlFor="poNumber">PO Number #</label>
             <input
               type="text"

@@ -1,0 +1,43 @@
+.container {
+  position: relative;
+}
+
+.inputFocused {
+  outline: none;
+}
+
+.inputOpen {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.suggestionsContainer {
+  display: none;
+}
+
+.suggestionsContainerOpen {
+  position: absolute;
+  top: 51px;
+  z-index: 2;
+  display: block;
+  width: 100%;
+  background-color: #fff;
+  border: 1px solid #ced4da;
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+
+.suggestionsList {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.suggestion {
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.suggestionHighlighted {
+  background-color: #ddd;
+}

@@ -4,8 +4,8 @@ const ROUTES = {
   dashboard: '/dashboard',
   support: '/support',
   invoicing: {
-    base: '/invoices',
-    add: '/invoices/add'
+    base: '/invoices/list',
+    add: '/invoice'
   },
   clients: {
     base: '/clients/list',
