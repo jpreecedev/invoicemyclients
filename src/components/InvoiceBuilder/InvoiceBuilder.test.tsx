@@ -1,9 +1,9 @@
 import React from 'react'
 import { render, fireEvent, waitForElement } from '@testing-library/react'
-import { Invoice } from './Invoice'
+import { Invoice } from './InvoiceBuilder'
 import { act } from 'react-dom/test-utils'
 
-describe('<Invoice /> tests', () => {
+describe('<InvoiceBuilder /> tests', () => {
   it('should get the right sub total, tax and balance due when 1 line', async () => {
     const onAction = jest.fn()
 

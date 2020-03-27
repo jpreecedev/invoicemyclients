@@ -6,7 +6,7 @@ import { toast } from 'react-toastify'
 
 import { AuthenticatedPage } from '../../components/AuthenticatedPage'
 import { Card } from '../../components/Card'
-import { Invoice } from '../../components/Invoice'
+import { InvoiceBuilder } from '../../components/InvoiceBuilder'
 import { ROUTES } from '../../routes'
 import { INVOICES_REF } from '../../constants/firebase'
 
@@ -27,7 +27,11 @@ const InvoicesAddPage = () => {
     })
   }
 
-  const performAction = (action: InvoiceActions, formData: InvoiceFormData) => {
+  const performAction = (action: InvoiceActions, formData: InvoiceFormData | null) => {
+    if (!formData) {
+      return
+    }
+
     switch (action) {
       case 'Save':
         createOrUpdate(formData)
@@ -41,7 +45,7 @@ const InvoicesAddPage = () => {
   return (
     <AuthenticatedPage title="Create A New Invoice">
       <Card>
-        <Invoice onAction={performAction} />
+        <InvoiceBuilder onAction={performAction} />
       </Card>
     </AuthenticatedPage>
   )

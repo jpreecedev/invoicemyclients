@@ -12,7 +12,7 @@ import { SignUpPage } from '../../pages/SignUp'
 import { ErrorPage } from '../../pages/Error'
 import { DashboardPage } from '../../pages/Dashboard'
 import { InvoicesPage } from '../../pages/Invoices'
-import { InvoicesAddPage } from '../../pages/InvoicesAdd'
+import { InvoicesAddPage } from '../../pages/InvoicesUpdate'
 import { ClientsPage } from '../../pages/Clients'
 import { ClientsUpdatePage } from '../../pages/ClientsUpdate'
 
@@ -60,7 +60,7 @@ const App: React.FC = () => {
         <AuthenticatedRoute exact path={ROUTES.invoicing.base}>
           <InvoicesPage />
         </AuthenticatedRoute>
-        <AuthenticatedRoute exact path={ROUTES.invoicing.addEdit}>
+        <AuthenticatedRoute exact path={`${ROUTES.invoicing.addEdit}/:id?`}>
           <InvoicesAddPage />
         </AuthenticatedRoute>
         <AuthenticatedRoute exact path={ROUTES.clients.base}>

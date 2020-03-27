@@ -1,26 +1,30 @@
 import React from 'react'
 import { useForm, useFieldArray } from 'react-hook-form'
-import { AutoComplete } from '../AutoComplete'
 
+import { AutoComplete } from '../AutoComplete'
 import { calculateLineTotal, calculateSubTotal, calculateTax } from '../../utils'
 import { useFirebaseList } from '../../hooks'
 import { CLIENTS_REF } from '../../constants/firebase'
 
 interface InvoiceProps {
-  onAction: (action: InvoiceActions, invoiceFormData: InvoiceFormData) => void
+  onAction: (action: InvoiceActions, invoiceFormData: InvoiceFormData | null) => void
 }
 
-const cleanFormData = (invoiceFormData: InvoiceFormData) => ({
-  ...invoiceFormData,
-  lineItems: invoiceFormData.lineItems.filter(
-    x => x.description && x.item && x.quantity && x.unitCost
-  )
-})
+const cleanFormData = (invoiceFormData: InvoiceFormData | null) => {
+  if (!invoiceFormData) {
+    return null
+  }
 
-const Invoice: React.FC<InvoiceProps> = ({ onAction }) => {
-  const [invoiceFormData, setInvoiceFormData] = React.useState<InvoiceFormData>(
-    {} as InvoiceFormData
-  )
+  return {
+    ...invoiceFormData,
+    lineItems: invoiceFormData.lineItems.filter(
+      x => x.description && x.item && x.quantity && x.unitCost
+    )
+  }
+}
+
+const InvoiceBuilder: React.FC<InvoiceProps> = ({ onAction }) => {
+  const [invoiceFormData, setInvoiceFormData] = React.useState<InvoiceFormData | null>(null)
   const { register, handleSubmit, control } = useForm<InvoiceFormData>()
   const [clients] = useFirebaseList<ClientAddFormData>(CLIENTS_REF)
   const [selectedClientId, setSelectedClientId] = React.useState<string>('')
@@ -304,4 +308,4 @@ const Invoice: React.FC<InvoiceProps> = ({ onAction }) => {
   )
 }
 
-export { Invoice }
+export { InvoiceBuilder }

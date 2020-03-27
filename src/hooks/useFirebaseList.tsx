@@ -57,7 +57,7 @@ function useFirebaseInvoiceList(): [InvoiceFormData[] | null, boolean] {
       .finally(() => {
         setResult(mappedSnapshots)
       })
-  }, [snapshotLoading, initialising, snapshots])
+  }, [snapshotLoading, initialising, snapshots, user])
 
   return [result, loading]
 }
