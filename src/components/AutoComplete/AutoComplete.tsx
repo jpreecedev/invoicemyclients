@@ -1,5 +1,5 @@
 import React from 'react'
-import Autosuggest from 'react-autosuggest'
+import Autosuggest, { InputProps } from 'react-autosuggest'
 
 import styles from './styles.module.css'
 
@@ -7,6 +7,7 @@ interface AutoCompleteProps {
   placeholder: string
   suggestions: Suggestion[]
   onSelected: (suggestion: Suggestion) => void
+  defaultValue: string | undefined
 }
 
 class AutoComplete extends React.Component<AutoCompleteProps> {
@@ -48,11 +49,11 @@ class AutoComplete extends React.Component<AutoCompleteProps> {
 
   render() {
     const { value, filteredSuggestions } = this.state
-    const { placeholder, onSelected } = this.props
+    const { placeholder, onSelected, defaultValue } = this.props
 
-    const inputProps = {
+    const inputProps: InputProps<Suggestion> = {
       placeholder,
-      value,
+      value: value || defaultValue || '',
       onChange: this.onChange
     }
 

@@ -8,6 +8,7 @@ import { CLIENTS_REF } from '../../constants/firebase'
 
 interface InvoiceProps {
   onAction: (action: InvoiceActions, invoiceFormData: InvoiceFormData | null) => void
+  defaultFormData: InvoiceFormData | undefined
 }
 
 const cleanFormData = (invoiceFormData: InvoiceFormData | null) => {
@@ -23,7 +24,7 @@ const cleanFormData = (invoiceFormData: InvoiceFormData | null) => {
   }
 }
 
-const InvoiceBuilder: React.FC<InvoiceProps> = ({ onAction }) => {
+const InvoiceBuilder: React.FC<InvoiceProps> = ({ onAction, defaultFormData = null }) => {
   const [invoiceFormData, setInvoiceFormData] = React.useState<InvoiceFormData | null>(null)
   const { register, handleSubmit, control } = useForm<InvoiceFormData>()
   const [clients] = useFirebaseList<ClientAddFormData>(CLIENTS_REF)
@@ -77,6 +78,11 @@ const InvoiceBuilder: React.FC<InvoiceProps> = ({ onAction }) => {
 
   React.useEffect(addLineItem, [])
 
+  React.useEffect(() => {
+    setSelectedClientId(defaultFormData?.clientId || '')
+    setInvoiceFormData(defaultFormData)
+  }, [defaultFormData])
+
   return (
     <form onChange={handleSubmit(handleChange)}>
       <div className="container">
@@ -87,6 +93,7 @@ const InvoiceBuilder: React.FC<InvoiceProps> = ({ onAction }) => {
               placeholder="Select a client"
               onSelected={suggestion => setSelectedClientId(suggestion.value as string)}
               suggestions={getAutoCompleteSuggestions()}
+              defaultValue={defaultFormData?.companyName}
             />
             <input
               type="text"
@@ -109,6 +116,7 @@ const InvoiceBuilder: React.FC<InvoiceProps> = ({ onAction }) => {
               name="invoiceDate"
               data-testid="invoiceDate"
               placeholder="Invoice Date"
+              defaultValue={invoiceFormData?.invoiceDate}
               autoComplete="off"
               ref={register}
             />
@@ -122,6 +130,7 @@ const InvoiceBuilder: React.FC<InvoiceProps> = ({ onAction }) => {
               name="invoiceNumber"
               data-testid="invoiceNumber"
               placeholder="Invoice Number #"
+              defaultValue={invoiceFormData?.invoiceNumber}
               autoComplete="off"
               ref={register}
             />
@@ -137,6 +146,7 @@ const InvoiceBuilder: React.FC<InvoiceProps> = ({ onAction }) => {
               name="dueDate"
               data-testid="dueDate"
               placeholder="Due Date"
+              defaultValue={invoiceFormData?.dueDate}
               autoComplete="off"
               ref={register}
             />
@@ -150,6 +160,7 @@ const InvoiceBuilder: React.FC<InvoiceProps> = ({ onAction }) => {
               name="poNumber"
               data-testid="poNumber"
               placeholder="PO Number #"
+              defaultValue={invoiceFormData?.poNumber}
               autoComplete="off"
               ref={register}
             />
@@ -187,6 +198,7 @@ const InvoiceBuilder: React.FC<InvoiceProps> = ({ onAction }) => {
                       name={`lineItems[${index}].item`}
                       data-testid={`lineItems[${index}].item`}
                       ref={register}
+                      defaultValue={defaultFormData?.lineItems[index]?.item}
                     />
                   </th>
                   <td>
@@ -197,6 +209,7 @@ const InvoiceBuilder: React.FC<InvoiceProps> = ({ onAction }) => {
                       name={`lineItems[${index}].description`}
                       data-testid={`lineItems[${index}].description`}
                       ref={register}
+                      defaultValue={defaultFormData?.lineItems[index]?.description}
                     />
                   </td>
                   <td>
@@ -207,6 +220,7 @@ const InvoiceBuilder: React.FC<InvoiceProps> = ({ onAction }) => {
                       name={`lineItems[${index}].unitCost`}
                       data-testid={`lineItems[${index}].unitCost`}
                       ref={register}
+                      defaultValue={defaultFormData?.lineItems[index]?.unitCost}
                     />
                   </td>
                   <td>
@@ -217,6 +231,7 @@ const InvoiceBuilder: React.FC<InvoiceProps> = ({ onAction }) => {
                       name={`lineItems[${index}].quantity`}
                       data-testid={`lineItems[${index}].quantity`}
                       ref={register}
+                      defaultValue={defaultFormData?.lineItems[index]?.quantity}
                     />
                   </td>
                   <td className="text-right">

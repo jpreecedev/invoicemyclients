@@ -62,6 +62,41 @@ function useFirebaseInvoiceList(): [InvoiceFormData[] | null, boolean] {
   return [result, loading]
 }
 
+function useFirebaseInvoice(id: string | undefined): [InvoiceFormData | undefined, boolean] {
+  const [user, initialising] = useAuthState(firebase.auth())
+  const [result, setResult] = React.useState<InvoiceFormData | undefined>(undefined)
+  const [loading, setLoading] = React.useState(true)
+  const [snapshot, snapshotLoading] = useObjectVal<InvoiceFormData>(
+    firebase.database().ref(`${user?.uid}/${INVOICES_REF}/${id}`)
+  )
+
+  if (!user && !initialising) {
+    return [undefined, false]
+  }
+
+  if (snapshot && !snapshotLoading && !result) {
+    const mappedSnapshot: InvoiceFormData = {
+      key: id,
+      ...snapshot
+    }
+
+    firebase
+      .database()
+      .ref(`${user?.uid}/${CLIENTS_REF}/${snapshot.clientId}`)
+      .once('value', snapshot => {
+        const clientValue: ClientAddFormData = snapshot.val()
+        mappedSnapshot.companyName = clientValue.clientDetails.companyName
+        mappedSnapshot.contactName = `${clientValue.contacts.firstName} ${clientValue.contacts.lastName}`
+      })
+      .finally(() => {
+        setLoading(false)
+        setResult(mappedSnapshot)
+      })
+  }
+
+  return [result, loading]
+}
+
 function useFirebaseList<T extends firebase.database.DataSnapshot>(
   ref: string
 ): [T[] | null, boolean] {
@@ -102,4 +137,4 @@ function useFirebaseObject<T extends firebase.database.DataSnapshot>(
   return [value, false]
 }
 
-export { useFirebaseList, useFirebaseObject, useFirebaseInvoiceList }
+export { useFirebaseList, useFirebaseObject, useFirebaseInvoiceList, useFirebaseInvoice }
