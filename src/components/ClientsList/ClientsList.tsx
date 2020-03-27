@@ -1,15 +1,16 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
+import { Loading } from '../Loading'
 import { useFirebaseList } from '../../hooks'
 import { ROUTES } from '../../routes'
 import { CLIENTS_REF } from '../../constants/firebase'
 
 const ClientsList = () => {
-  const [clientData, component] = useFirebaseList<ClientAddFormData>(CLIENTS_REF)
+  const [clientData, loading] = useFirebaseList<ClientAddFormData>(CLIENTS_REF)
 
   if (!clientData || !clientData.length) {
-    if (component === null) {
+    if (!loading) {
       return (
         <div>
           <p>It look&apos;s like you do not have any clients set up yet!</p>
@@ -17,7 +18,7 @@ const ClientsList = () => {
         </div>
       )
     }
-    return component
+    return <Loading />
   }
 
   return (

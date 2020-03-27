@@ -6,30 +6,22 @@ import { calculateLineTotal, calculateSubTotal, calculateTax } from '../../utils
 import { useFirebaseList } from '../../hooks'
 import { CLIENTS_REF } from '../../constants/firebase'
 
-type FormData = {
-  invoiceDate: string
-  invoiceNumber: string
-  lineItems: LineItem[]
-}
-
 interface InvoiceProps {
-  onAction: (action: InvoiceActions, formData: FormData) => void
+  onAction: (action: InvoiceActions, invoiceFormData: InvoiceFormData) => void
 }
 
-const defaultFormData: FormData = {
-  invoiceDate: '',
-  invoiceNumber: '',
-  lineItems: []
-}
-
-const cleanFormData = (formData: FormData) => ({
-  ...formData,
-  lineItems: formData.lineItems.filter(x => x.description && x.item && x.quantity && x.unitCost)
+const cleanFormData = (invoiceFormData: InvoiceFormData) => ({
+  ...invoiceFormData,
+  lineItems: invoiceFormData.lineItems.filter(
+    x => x.description && x.item && x.quantity && x.unitCost
+  )
 })
 
 const Invoice: React.FC<InvoiceProps> = ({ onAction }) => {
-  const [formData, setFormData] = React.useState<FormData>(defaultFormData)
-  const { register, handleSubmit, control } = useForm<FormData>()
+  const [invoiceFormData, setInvoiceFormData] = React.useState<InvoiceFormData>(
+    {} as InvoiceFormData
+  )
+  const { register, handleSubmit, control } = useForm<InvoiceFormData>()
   const [clients] = useFirebaseList<ClientAddFormData>(CLIENTS_REF)
   const [selectedClientId, setSelectedClientId] = React.useState<string>('')
 
@@ -38,7 +30,9 @@ const Invoice: React.FC<InvoiceProps> = ({ onAction }) => {
     name: 'lineItems'
   })
 
-  const callback = (action: InvoiceActions) => onAction && onAction(action, cleanFormData(formData))
+  const callback = (action: InvoiceActions) =>
+    onAction && onAction(action, cleanFormData(invoiceFormData))
+
   const addLineItem = () => append({ name: 'lineItems' })
 
   const getAutoCompleteSuggestions = () =>
@@ -49,8 +43,8 @@ const Invoice: React.FC<InvoiceProps> = ({ onAction }) => {
         }))
       : []
 
-  const handleChange = (data: FormData) => {
-    setFormData(data)
+  const handleChange = (data: InvoiceFormData) => {
+    setInvoiceFormData(data)
 
     for (let index = 0; index < data.lineItems.length; index++) {
       const lineItem = data.lineItems[index]
@@ -84,7 +78,7 @@ const Invoice: React.FC<InvoiceProps> = ({ onAction }) => {
       <div className="container">
         <div className="row">
           <div className="col-12 col-md-4 form-group">
-            <label htmlFor="client">Client</label>
+            <label htmlFor="clientId">Client</label>
             <AutoComplete
               placeholder="Select a client"
               onSelected={suggestion => setSelectedClientId(suggestion.value as string)}
@@ -93,9 +87,9 @@ const Invoice: React.FC<InvoiceProps> = ({ onAction }) => {
             <input
               type="text"
               className="form-control d-none"
-              id="client"
-              name="client"
-              data-testid="client"
+              id="clientId"
+              name="clientId"
+              data-testid="clientId"
               placeholder="Client"
               autoComplete="off"
               defaultValue={selectedClientId}
@@ -222,9 +216,9 @@ const Invoice: React.FC<InvoiceProps> = ({ onAction }) => {
                     />
                   </td>
                   <td className="text-right">
-                    {formData && formData.lineItems && (
+                    {invoiceFormData && invoiceFormData.lineItems && (
                       <p className="mb-0 mt-4" data-testid="lineTotal">{`£${calculateLineTotal(
-                        formData.lineItems[index]
+                        invoiceFormData.lineItems[index]
                       ).toFixed(2)}`}</p>
                     )}
                   </td>
@@ -238,9 +232,9 @@ const Invoice: React.FC<InvoiceProps> = ({ onAction }) => {
             <div className="row mt-5 pb-3">
               <div className="col-6 font-weight-bold">Subtotal</div>
               <div className="col-6 text-right">
-                {formData && formData.lineItems && (
+                {invoiceFormData && invoiceFormData.lineItems && (
                   <span data-testid="subTotal">
-                    &pound;{calculateSubTotal(formData.lineItems).toFixed(2)}
+                    &pound;{calculateSubTotal(invoiceFormData.lineItems).toFixed(2)}
                   </span>
                 )}
               </div>
@@ -248,9 +242,9 @@ const Invoice: React.FC<InvoiceProps> = ({ onAction }) => {
             <div className="row pb-3 pt-3">
               <div className="col-6 font-weight-bold">Tax</div>
               <div className="col-6 text-right">
-                {formData && formData.lineItems && (
+                {invoiceFormData && invoiceFormData.lineItems && (
                   <span data-testid="tax">
-                    &pound;{calculateTax(formData.lineItems).toFixed(2)}
+                    &pound;{calculateTax(invoiceFormData.lineItems).toFixed(2)}
                   </span>
                 )}
               </div>
@@ -258,11 +252,12 @@ const Invoice: React.FC<InvoiceProps> = ({ onAction }) => {
             <div className="row pb-3 pt-3">
               <div className="col-6 font-weight-bold">Balance Due</div>
               <div className="col-6 text-right">
-                {formData && formData.lineItems && (
+                {invoiceFormData && invoiceFormData.lineItems && (
                   <span data-testid="balanceDue">
                     &pound;
                     {(
-                      calculateSubTotal(formData.lineItems) + calculateTax(formData.lineItems)
+                      calculateSubTotal(invoiceFormData.lineItems) +
+                      calculateTax(invoiceFormData.lineItems)
                     ).toFixed(2)}
                   </span>
                 )}

@@ -9,7 +9,7 @@ const InvoicesPage = () => {
   return (
     <AuthenticatedPage title="Invoices">
       <InvoicesList />
-      <Link to={ROUTES.invoicing.add} className="btn btn-primary btn-sm d-inline">
+      <Link to={ROUTES.invoicing.addEdit} className="btn btn-primary btn-sm d-inline">
         Create new invoice
       </Link>
     </AuthenticatedPage>

@@ -5,7 +5,7 @@ type LineItem = {
   quantity: number | string
 }
 
-type InvoiceActions = 'Save' | 'SaveAsDraft' | 'NagClientToPay' | 'DownloadPDF'
+type InvoiceActions = 'Save' | 'Update' | 'SaveAsDraft' | 'NagClientToPay' | 'DownloadPDF'
 
 type Errors = FieldErrors<FormValues>
 
@@ -78,3 +78,14 @@ type ClientsProviderProps = FormRegistration & {
 }
 
 type Suggestion = { key: string; value: Record<string, any> | string | null }
+
+type InvoiceFormData = firebase.database.DataSnapshot & {
+  clientId: string
+  companyName?: string
+  contactName?: string
+  invoiceDate: string
+  invoiceNumber: string
+  dueDate: string
+  poNumber: string
+  lineItems: LineItem[]
+}

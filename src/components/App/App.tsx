@@ -60,7 +60,7 @@ const App: React.FC = () => {
         <AuthenticatedRoute exact path={ROUTES.invoicing.base}>
           <InvoicesPage />
         </AuthenticatedRoute>
-        <AuthenticatedRoute exact path={ROUTES.invoicing.add}>
+        <AuthenticatedRoute exact path={ROUTES.invoicing.addEdit}>
           <InvoicesAddPage />
         </AuthenticatedRoute>
         <AuthenticatedRoute exact path={ROUTES.clients.base}>

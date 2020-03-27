@@ -10,7 +10,8 @@ module.exports = {
   env: {
     browser: true,
     jasmine: true,
-    jest: true
+    jest: true,
+    es6: true
   },
   rules: {
     'prettier/prettier': ['error', { singleQuote: true }],

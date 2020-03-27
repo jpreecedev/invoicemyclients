@@ -5,7 +5,7 @@ const ROUTES = {
   support: '/support',
   invoicing: {
     base: '/invoices/list',
-    add: '/invoice'
+    addEdit: '/invoice'
   },
   clients: {
     base: '/clients/list',
