@@ -3,6 +3,7 @@ import firebase from 'firebase/app'
 import { useHistory, useParams } from 'react-router-dom'
 import { useAuthState } from 'react-firebase-hooks/auth'
 import { toast } from 'react-toastify'
+import { Helmet } from 'react-helmet'
 
 import { AuthenticatedPage } from '../../components/AuthenticatedPage'
 import { Card } from '../../components/Card'
@@ -10,6 +11,7 @@ import { InvoiceBuilder } from '../../components/InvoiceBuilder'
 import { ROUTES } from '../../routes'
 import { INVOICES_REF } from '../../constants/firebase'
 import { useFirebaseInvoice } from '../../hooks'
+import { saveInvoicePDF } from '../../utils'
 
 const InvoicesAddPage = () => {
   const [user] = useAuthState(firebase.auth())
@@ -53,6 +55,9 @@ const InvoicesAddPage = () => {
       case 'Save':
         createOrUpdate(formData)
         break
+      case 'DownloadPDF':
+        saveInvoicePDF(formData)
+        break
       default:
         console.log(action, formData)
         break
@@ -60,13 +65,21 @@ const InvoicesAddPage = () => {
   }
 
   return (
-    <AuthenticatedPage
-      title={isEditing ? `Edit Invoice ${invoiceData?.invoiceNumber}` : 'Create A New Invoice'}
-    >
-      <Card>
-        <InvoiceBuilder onAction={performAction} defaultFormData={invoiceData} />
-      </Card>
-    </AuthenticatedPage>
+    <>
+      <Helmet>
+        <script src="/libs/pdfmake.min.js"></script>
+        <script src="/libs/vfs_fonts.js"></script>
+      </Helmet>
+      <AuthenticatedPage
+        title={
+          isEditing ? `Edit Invoice ${invoiceData?.invoiceNumber || ''}` : 'Create A New Invoice'
+        }
+      >
+        <Card>
+          <InvoiceBuilder onAction={performAction} defaultFormData={invoiceData} />
+        </Card>
+      </AuthenticatedPage>
+    </>
   )
 }
 
