@@ -60,7 +60,9 @@ const InvoicesAddPage = () => {
   }
 
   return (
-    <AuthenticatedPage title="Create A New Invoice">
+    <AuthenticatedPage
+      title={isEditing ? `Edit Invoice ${invoiceData?.invoiceNumber}` : 'Create A New Invoice'}
+    >
       <Card>
         <InvoiceBuilder onAction={performAction} defaultFormData={invoiceData} />
       </Card>

@@ -5,7 +5,7 @@ type LineItem = {
   quantity: number | string
 }
 
-type InvoiceActions = 'Save' | 'Update' | 'SaveAsDraft' | 'NagClientToPay' | 'DownloadPDF'
+type InvoiceActions = 'Save' | 'Update' | 'NagClientToPay' | 'DownloadPDF'
 
 type Errors = FieldErrors<FormValues>
 

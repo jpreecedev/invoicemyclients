@@ -297,13 +297,6 @@ const InvoiceBuilder: React.FC<InvoiceProps> = ({ onAction, defaultFormData = nu
               <button
                 type="button"
                 className="btn btn-primary-soft mr-3"
-                onClick={() => callback('SaveAsDraft')}
-              >
-                Save As Draft
-              </button>
-              <button
-                type="button"
-                className="btn btn-primary-soft mr-3"
                 onClick={() => callback('NagClientToPay')}
               >
                 Nag Client To Pay

@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { ArrowRight } from 'react-feather'
 
 import illustration1Cropped from '../../assets/img/illustrations/illustration-1-cropped.png'
@@ -22,9 +23,9 @@ const LandingPageCTA = () => {
               your invoices on time.
             </p>
 
-            <a className="btn btn-primary lift mt-3" href={ROUTES.signup}>
+            <Link className="btn btn-primary lift mt-3" to={ROUTES.signup}>
               It&apos;s free to get started <ArrowRight className="ml-3" />
-            </a>
+            </Link>
           </div>
         </div>
       </div>

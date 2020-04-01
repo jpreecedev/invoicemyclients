@@ -1,5 +1,6 @@
 import React from 'react'
 import { ArrowRight } from 'react-feather'
+import { Link } from 'react-router-dom'
 
 import { ROUTES } from '../../routes'
 import illustration4 from '../../assets/img/illustrations/illustration-4.png'
@@ -32,9 +33,9 @@ const Hero = () => {
 
             <h2>We make it quick, easy, and secure for your clients to pay their invoices.</h2>
 
-            <a className="btn btn-primary lift mt-3" href={ROUTES.signup}>
+            <Link className="btn btn-primary lift mt-3" to={ROUTES.signup}>
               It&apos;s free to get started <ArrowRight className="ml-3" />
-            </a>
+            </Link>
           </div>
         </div>
       </div>
