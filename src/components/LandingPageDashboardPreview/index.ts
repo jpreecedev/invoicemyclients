@@ -1,1 +1,1 @@
-export * from './LandingPageDashboardPreview'
+export * from './LandingPageDashboardPreview';

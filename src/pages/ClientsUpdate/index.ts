@@ -1,1 +1,1 @@
-export * from './ClientsUpdate'
+export * from './ClientsUpdate';

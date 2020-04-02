@@ -1,1 +1,1 @@
-export * from './InvoiceBuilder'
+export * from './InvoiceBuilder';

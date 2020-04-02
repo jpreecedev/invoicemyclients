@@ -1,1 +1,1 @@
-export * from './LandingPageCTA'
+export * from './LandingPageCTA';

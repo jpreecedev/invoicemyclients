@@ -1,1 +1,1 @@
-export * from './FormLabelGroup'
+export * from './FormLabelGroup';

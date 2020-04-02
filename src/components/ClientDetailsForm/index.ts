@@ -1,1 +1,1 @@
-export * from './ClientDetailsForm'
+export * from './ClientDetailsForm';

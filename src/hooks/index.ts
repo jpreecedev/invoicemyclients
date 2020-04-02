@@ -1,1 +1,1 @@
-export * from './useFirebaseList'
+export * from './useFirebaseList';

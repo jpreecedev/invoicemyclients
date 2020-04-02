@@ -1,9 +1,9 @@
-import React from 'react'
+import React from 'react';
 
-import { SignInForm } from '../../components/SignInForm'
+import { SignInForm } from '../../components/SignInForm';
 
 const SignUpPage = () => {
-  return <SignInForm />
-}
+	return <SignInForm />;
+};
 
-export { SignUpPage }
+export { SignUpPage };

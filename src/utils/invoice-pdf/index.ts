@@ -1,1 +1,1 @@
-export * from './invoice-pdf'
+export * from './invoice-pdf';
