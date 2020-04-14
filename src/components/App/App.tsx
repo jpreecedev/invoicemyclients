@@ -15,6 +15,7 @@ import { InvoicesPage } from '../../pages/Invoices';
 import { InvoicesAddPage } from '../../pages/InvoicesUpdate';
 import { ClientsPage } from '../../pages/Clients';
 import { ClientsUpdatePage } from '../../pages/ClientsUpdate';
+import { ComingSoonPage } from '../../pages/ComingSoon';
 
 const firebaseConfig = {
 	apiKey: process.env.REACT_APP_API_KEY,
@@ -48,6 +49,9 @@ const App: React.FC = () => {
 	return (
 		<Router>
 			<Switch>
+				<Route exact path={ROUTES.comingsoon}>
+					<ComingSoonPage />
+				</Route>
 				<Route exact path={ROUTES.home}>
 					<LandingPage />
 				</Route>

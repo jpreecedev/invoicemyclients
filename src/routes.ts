@@ -1,5 +1,6 @@
 const ROUTES = {
 	home: '/',
+	comingsoon: '/landing',
 	signup: '/sign-up',
 	dashboard: '/dashboard',
 	invoicing: {

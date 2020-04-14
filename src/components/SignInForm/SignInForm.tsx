@@ -12,7 +12,10 @@ const uiConfig = {
 	signInOptions: [
 		firebase.auth.FacebookAuthProvider.PROVIDER_ID,
 		firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-		'apple.com',
+		{
+			provider: 'apple.com',
+			scopes: ['email', 'name'],
+		},
 	],
 };
 
